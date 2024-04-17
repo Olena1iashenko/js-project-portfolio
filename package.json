@@ -1,5 +1,5 @@
 {
-  "name": "vanilla-app-template",
+  "name": "js-project-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,12 +9,19 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.5.2",
-    "glob": "^8.1.0"
+    "glob": "^8.1.0",
+    "vite": "^4.5.2"
   },
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "command",
   "license": "ISC",
   "dependencies": {
+    "@fontsource/inter-tight": "^5.0.19",
+    "accordion-js": "^3.3.4",
+    "axios": "^1.6.8",
+    "intersection-observer": "^0.12.2",
+    "izitoast": "^1.4.0",
+    "modern-normalize": "^2.0.0",
+    "swiper": "^11.1.1",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
   }
