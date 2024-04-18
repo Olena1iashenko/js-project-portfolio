@@ -44,7 +44,7 @@
 }
 .projects-link {
   display: block;
-  margin: 32px 32px 0 32px;
+  margin: 32px;
   overflow: hidden;
 
   cursor: pointer;
@@ -97,8 +97,8 @@
 }
 
 .projects-arrow-icon {
-  /* background-color: red; */
   stroke: #fafafa;
+  fill: none;
 }
 .js-btn_arrow-left {
 }
