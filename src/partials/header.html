@@ -1,3 +1,67 @@
-<header class="header" id='section-header'>
-    <!-- <div class="container"></div> -->
+<header class="header-container" id="section-header">
+  <div class="container">
+    <div class="container-logo">
+      <picture class="header-logo">
+        <source
+          media="(max-width: 375px)"
+          srcset="
+            ./img/header/mobile-logo@1x.jpg 1x,
+            ./img/header/mobile-logo@2x.jpg 2x
+          "
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="
+            ./img/header/tablet-logo@1x.jpg 1x,
+            ./img/header/tablet-logo@2x.jpg 2x
+          "
+        />
+        <source
+          media="(min-width: 1440px)"
+          srcset="
+            ./img/header/desktop-logo@1x.jpg 1x,
+            ./img/header/desktop-logo@2x.jpg 2x
+          "
+        />
+        <img
+          class="logo-img"
+          src="./img/header/mobile-logo@1x.jpg"
+          width="80"
+          height="80"
+          alt="logo photo"
+        />
+      </picture>
+      <p class="header-logo-text">jefferson*</p>
+    </div>
+    <ul class="header-menu-nav visually-hidden">
+      Menu
+    </ul>
+    <button
+      class="header-burger-btn"
+      aria-label="button-open-menu"
+      type="button"
+    >
+      <svg class="burger-svg" width="24" height="12">
+        <use href="./img/icons.svg#icon-BurgerMenuOpen"></use>
+      </svg>
+    </button>
+    <a href="" class="linc-order" id="">Order the project</a>
+  </div>
 </header>
+
+<div class="mobile-modal-menu visually-hidden">
+  <div class="mobile-content">
+    <button class="mobile-menu-btn" type="button">
+      <svg class="mobile-svg" width="16" height="16">
+        <use href="./img/icons.svg#icon-BurgerMenuClosed"></use>
+      </svg>
+    </button>
+    <ul class="mobile-menu-list">
+      <li class="mobile-menu-itim" id="">About me</li>
+      <li class="mobile-menu-itim" id="">Benefits</li>
+      <li class="mobile-menu-itim" id="">Projects</li>
+      <li class="mobile-menu-itim" id="">FAQ</li>
+    </ul>
+    <a href="" class="linc-order" id="">Order the project</a>
+  </div>
+</div>

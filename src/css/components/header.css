@@ -1,1 +1,151 @@
-/* /*/
+.header-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 32px;
+  width: 100%;
+  z-index: 1;
+}
+
+header .container-logo {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.container-logo .header-logo {
+  width: 80px;
+}
+
+.logo-img {
+  border-radius: 18px;
+  border: none;
+  width: 80px;
+  height: 80px;
+}
+
+.header-logo-text {
+  width: 84px;
+  height: 21px;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+}
+
+.header-menu-nav {
+  display: none;
+}
+
+/* @media (max-width: 768px) {
+  .header-menu-nav {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #fafafa;
+    margin-left: 164px;
+    margin-right: 164px;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+} */
+
+.header-link {
+  display: none;
+}
+
+.header-burger-btn {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 16px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  width: 28px;
+  height: 28px;
+  stroke: #fafafa;
+}
+
+/* @media (max-width: 768px) {
+  .header-burger-btn {
+    display: none;
+  }
+} */
+
+.burger-svg {
+}
+
+.linc-order {
+}
+
+/* Mobile Modal */
+
+.mobile-modal-menu {
+  display: none;
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+  .mobile-modal-menu {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 375px;
+    height: 812px;
+  }
+}
+
+/* .mobile-content {
+  z-index: 2;
+} */
+
+.mobile-menu-btn {
+}
+
+.mobile-menu-list {
+  display: flex;
+}
+
+.mobile-menu-itim {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #fafafa;
+}
+
+.linc-order {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .linc-order {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: #fafafa;
+    border-radius: 60px;
+    padding: 14px 31px;
+    width: 164px;
+    height: 45px;
+    background-color: #ed3b44;
+    align-self: flex-start;
+  }
+}
