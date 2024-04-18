@@ -37,5 +37,12 @@
 <path d="M18 6L6 18" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M6 6L18 18" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
+<symbol id="icon-BurgerMenuOpen" viewBox="0 0 64 32">
+<path stroke-width="5.3333" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M4 5.111h56M4 26.889h56"></path>
+</symbol>
+<symbol id="icon-BurgerMenuClosed" viewBox="0 0 32 32">
+<path stroke-width="2.2857" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M24 8l-16 16"></path>
+<path stroke-width="2.2857" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M8 8l16 16"></path>
+</symbol>
 </defs>
 </svg>
