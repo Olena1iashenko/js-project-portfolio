@@ -1,3 +1,4 @@
+/* Block 1 */
 .box {
   margin-bottom: 32px;
 }
@@ -25,25 +26,35 @@
   padding: 32px;
   margin-bottom: 16px;
   width: 100%;
+  height: 500px;
 }
 
 @media only screen and (min-width: 768px) {
   .wrapper {
     padding: 64px;
+    height: 700px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .wrapper {
-    width: 680px;
     margin-bottom: 0;
+    height: auto;
   }
 }
 
 picture {
+  display: flex;
+  flex-direction: column;
   border-radius: 24px;
   width: 100%;
   object-fit: cover;
+}
+
+@media only screen and (min-width: 1440px) {
+  picture {
+    display: block;
+  }
 }
 
 .p-title {
@@ -68,8 +79,30 @@ picture {
   color: #fafafa66;
 }
 
+/* Block Accordion */
 .accordion-container {
-  margin: 0 32px;
+  max-width: 343px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .accordion-container {
+    max-width: 704px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .accordion-container {
+    max-width: 1376px;
+  }
+}
+
+.accordion-container .ac {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #fafafa33;
+  padding: 20px 0 32px;
+  margin: 0;
 }
 
 .accordion-container .ac .ac-trigger {
@@ -79,12 +112,7 @@ picture {
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #fafafa66;
-}
-
-.accordion-container .ac {
-  border: none;
-  background-color: transparent;
-  border-bottom: 1px solid #fafafa33;
+  padding: 0 0 16px;
 }
 
 .accordion-container .ac .ac-panel .ac-text {
@@ -93,9 +121,26 @@ picture {
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: #fafafa;
-  width: 612px;
-  margin-left: auto;
-  padding: 8px 64px;
+  padding: 12px 0px;
+  text-align: left;
+}
+
+.accordion-container .ac .ac-panel .ac-text:not(:last-child) {
+}
+
+@media only screen and (min-width: 768px) {
+  .accordion-container .ac .ac-panel .ac-text {
+    padding: 8px 0px;
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .accordion-container .ac .ac-panel .ac-text {
+    max-width: 680px;
+    margin-left: auto;
+    padding: 8px 68px 8px 0;
+  }
 }
 
 .accordion-container .ac .ac-trigger::after {
@@ -106,7 +151,7 @@ picture {
   transform: translate(0, -60%);
   position: absolute;
   right: 10px;
-  top: 50%;
+  top: 60%;
   border: 1px solid #fafafa33;
   border-radius: 100px;
   padding: 10px;
@@ -116,5 +161,7 @@ picture {
   content: '⌄';
   position: absolute;
   right: 10px;
-  top: 50%;
+  top: 60%;
 }
+
+/* Block Swiper */
