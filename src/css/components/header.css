@@ -3,10 +3,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 32px;
+  top: 32px;
+  width: 100%;
+  z-index: 1;
 }
 
-.container-logo {
+header .container-logo {
+  position: absolute;
+  top: 0;
+  left: 16px;
   display: flex;
   gap: 8px;
 }
@@ -31,32 +36,61 @@
   letter-spacing: -0.02em;
   color: #fafafa;
 }
-@media (max-width: 767px) {
-  .header-menu-nav {
-    display: none;
-  }
-}
 
-.mobile-modal-menu {
+.header-menu-nav {
   display: none;
 }
+
+/* @media (max-width: 768px) {
+  .header-menu-nav {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #fafafa;
+    margin-left: 164px;
+    margin-right: 164px;
+    margin-top: 10px;
+    align-self: flex-start;
+  }
+} */
 
 .header-link {
   display: none;
 }
 
 .header-burger-btn {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 16px;
+  padding: 0;
   background-color: transparent;
   border: none;
-  display: block;
-  padding: 0;
   width: 28px;
   height: 28px;
-  stroke-width: 2px;
   stroke: #fafafa;
 }
 
+/* @media (max-width: 768px) {
+  .header-burger-btn {
+    display: none;
+  }
+} */
+
+.burger-svg {
+}
+
+.linc-order {
+}
+
 /* Mobile Modal */
+
+.mobile-modal-menu {
+  display: none;
+}
 
 @media (min-width: 320px) and (max-width: 375px) {
   .mobile-modal-menu {
@@ -67,6 +101,13 @@
     width: 375px;
     height: 812px;
   }
+}
+
+/* .mobile-content {
+  z-index: 2;
+} */
+
+.mobile-menu-btn {
 }
 
 .mobile-menu-list {
@@ -90,14 +131,21 @@
 }
 
 .linc-order {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: -0.02em;
-  color: #fafafa;
-  border-radius: 60px;
-  padding: 14px 31px;
-  width: 164px;
-  height: 45px;
-  background-color: #ed3b44;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .linc-order {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: #fafafa;
+    border-radius: 60px;
+    padding: 14px 31px;
+    width: 164px;
+    height: 45px;
+    background-color: #ed3b44;
+    align-self: flex-start;
+  }
 }
