@@ -1,3 +1,228 @@
-.fqa {
+/* .fqa {
     background-color: 1C1D20;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0px 32px;
+width: 1440px;
+height: 640px;
+}
+
+.fqa-container {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+flex-direction: column;
+gap: 32px;
+}
+
+.faq-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+@media only screen and (min-width: 768px) {
+   .faq-wrapper{
+    
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .faq-wrapper {
+    max-width: 1356px;
+  }
+} */
+
+/* .faq-main-title {
+    font-family: "Inter Tight", sans-serif;
+font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: -0.02em;
+color: rgba(250, 250, 250, 0.4);
+}
+
+.faq-title {
+font-family: "Inter Tight", sans-serif;
+font-weight: 600;
+font-size: 20px;
+line-height: 150%;
+letter-spacing: -0.02em;
+/* color: #fafafa; */
+/* } */
+
+/* .faq-list {
+    width: calc(100% - 32px); 
+    display: flex;
+    flex-direction: column;
+}
+
+.left {
+    margin-right: 20px; 
+  }
+  
+  .right {
+    margin-left: 20px; 
+    border-right: none;
+  } */
+
+/* .faq-item { */
+/* display: flex; */
+/* flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    position: relative; */
+/* border: solid 1px rgba(250, 250, 250, 0.2); */
+
+/* } */
+
+/* .faq-item:first-child {
+    border-left: none;
+  }
+
+.faq-item:last-child{
+    border-right: none;
+} */
+
+/* @media only screen and (min-width: 768px) {
+   .faq-item{
+    
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+    .faq-item {
+      border-bottom: solid rgba(250, 250, 250, 0.2);
+    }
+  } */
+
+/* .faq-paragraph {
+    width: 656px;
+    height: 66px;
+    font-family: "Inter Tight", sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: -0.02em;
+color: rgba(250, 250, 250, 0.6);
+  }
+
+
+  .faq-content {
+    display: none;
+  }
+  
+  .faq-content.active {
+    display: block;
+  }
+   */
+
+.fqa-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.faq-main-title {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.4);
+  /* margin-bottom: 32px; */
+}
+
+.faq-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-title {
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+}
+
+.ac-btn {
+  background: none;
+  text-decoration: none;
+  border: none;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  margin: 20px 78px 16px 0;
+  text-align: left;
+  
+}
+
+/* .faq-list .faq-item .ac-btn::after{
+    content: '^';
+    text-align: center;
+    transform: translate(0, -60%);
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    border: 1px solid rgba(250, 250, 250, 0.2);
+border-radius: 100px;
+padding: 7px;
+width: 34px;
+height: 34px;
+} */
+
+.faq-paragraph {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
+  margin-bottom: 20px;
+text-align: left;
+}
+.faq-list .faq-item {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  border-top: 1px solid rgba(250, 250, 250, 0.2);;
+}
+
+/* .faq-svg {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    transform: translate(0, -60%);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    border: 1px solid #fafafa33;
+    border-radius: 100px;
+    padding: 10px;
+    color: red;
+} */
+
+.faq-svg{
+    width: 34px;
+height: 34px;
+background: #1c1d20;
+color: #fafafa;
+text-align: center;
+    transform: translate(0, -60%);
+    position: absolute;
+    right: 10px;
+    border: 1px solid rgba(250, 250, 250, 0.2);
+border-radius: 100px;
+
+fill: #fafafa;
 }
