@@ -1,1 +1,120 @@
-/* /*/
+.box {
+  margin-bottom: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  .box {
+    display: block;
+    width: 704px;
+    margin-bottom: 64px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .box {
+    display: flex;
+    gap: 16px;
+    width: 1376px;
+    margin-bottom: 96px;
+  }
+}
+
+.wrapper {
+  border-radius: 24px;
+  background: #242527;
+  padding: 32px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    padding: 64px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .wrapper {
+    width: 680px;
+    margin-bottom: 0;
+  }
+}
+
+picture {
+  border-radius: 24px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.p-title {
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .p-title {
+    font-size: 38px;
+    line-height: 1.05;
+  }
+}
+
+.functional-span {
+  color: #ed3b44;
+}
+
+.websites-span {
+  color: #fafafa66;
+}
+
+.accordion-container {
+  margin: 0 32px;
+}
+
+.accordion-container .ac .ac-trigger {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fafafa66;
+}
+
+.accordion-container .ac {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #fafafa33;
+}
+
+.accordion-container .ac .ac-panel .ac-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  width: 612px;
+  margin-left: auto;
+  padding: 8px 64px;
+}
+
+.accordion-container .ac .ac-trigger::after {
+  content: '^';
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  transform: translate(0, -60%);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  border: 1px solid #fafafa33;
+  border-radius: 100px;
+  padding: 10px;
+}
+
+.accordion-container .ac.is-active > .ac-header .ac-trigger::after {
+  content: '⌄';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
