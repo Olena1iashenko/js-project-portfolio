@@ -162,9 +162,9 @@ picture {
 }
 
 /* Block Swiper */
-/* .swiper {
-  display: flex;
-  margin: 0 auto;
+.js-swiper {
+  /* display: flex; */
+  /* margin: 0 auto; */
   margin-top: 96px;
   max-width: 1312px;
   font-weight: 500;
@@ -173,24 +173,17 @@ picture {
   color: #fafafa;
 }
 
-.swiper-wrapper {
-  display: flex;
+.js-swiper-wrapper {
+  /* display: flex; */
   min-width: 0;
 }
 
-.swiper-wrapper .swiper-slide {
+.js-swiper-slide {
   display: flex;
-  flex-shrink: unset;
-  width: 200px;
-  height: 200px;
+  padding: 88px 0;
+  text-align: center;
   border-radius: 100%;
   border: 1px solid #fafafa33;
   align-items: center;
   justify-content: center;
 }
-
-.swiper-button-next {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-} */
