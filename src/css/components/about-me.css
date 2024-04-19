@@ -1,10 +1,10 @@
 /* Block 1 */
-.box {
+.about-me-box {
   margin-bottom: 32px;
 }
 
 @media only screen and (min-width: 768px) {
-  .box {
+  .about-me-box {
     display: block;
     width: 704px;
     margin-bottom: 64px;
@@ -12,7 +12,7 @@
 }
 
 @media only screen and (min-width: 1440px) {
-  .box {
+  .about-me-box {
     display: flex;
     gap: 16px;
     width: 1376px;
@@ -20,7 +20,7 @@
   }
 }
 
-.wrapper {
+.about-me-wrapper {
   border-radius: 24px;
   background: #242527;
   padding: 32px;
@@ -30,20 +30,20 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .wrapper {
+  .about-me-wrapper {
     padding: 64px;
     padding-bottom: 436px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .wrapper {
+  .about-me-wrapper {
     margin-bottom: 0;
     height: auto;
   }
 }
 
-picture {
+about-me-picture {
   display: flex;
   flex-direction: column;
   border-radius: 24px;
@@ -52,12 +52,12 @@ picture {
 }
 
 @media only screen and (min-width: 1440px) {
-  picture {
+  about-me-picture {
     display: block;
   }
 }
 
-.p-title {
+.about-me-p-title {
   font-size: 24px;
   line-height: 1.17;
   letter-spacing: -0.03em;
@@ -65,7 +65,7 @@ picture {
 }
 
 @media only screen and (min-width: 768px) {
-  .p-title {
+  .about-me-p-title {
     font-size: 38px;
     line-height: 1.05;
   }
@@ -79,25 +79,25 @@ picture {
   color: #fafafa66;
 }
 
-/* Block Accordion */
-.accordion-container {
+/* Block about-me-accordion */
+.about-me-accordion-container {
   max-width: 343px;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 768px) {
-  .accordion-container {
+  .about-me-accordion-container {
     max-width: 704px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .accordion-container {
+  .about-me-accordion-container {
     max-width: 1376px;
   }
 }
 
-.accordion-container .ac {
+.about-me-accordion-container .about-me-ac {
   border: none;
   background-color: transparent;
   border-bottom: 1px solid #fafafa33;
@@ -105,7 +105,7 @@ picture {
   margin: 0;
 }
 
-.accordion-container .ac .ac-trigger {
+.about-me-accordion-container .about-me-ac .about-me-ac-trigger {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
@@ -115,7 +115,10 @@ picture {
   padding: 0 0 16px;
 }
 
-.accordion-container .ac .ac-panel .ac-text {
+.about-me-accordion-container
+  .about-me-ac
+  .about-me-ac-panel
+  .about-me-ac-text {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -126,21 +129,27 @@ picture {
 }
 
 @media only screen and (min-width: 768px) {
-  .accordion-container .ac .ac-panel .ac-text {
+  .about-me-accordion-container
+    .about-me-ac
+    .about-me-ac-panel
+    .about-me-ac-text {
     padding: 8px 0px;
     text-align: justify;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .accordion-container .ac .ac-panel .ac-text {
+  .about-me-accordion-container
+    .about-me-ac
+    .about-me-ac-panel
+    .about-me-ac-text {
     max-width: 680px;
     margin-left: auto;
     padding: 8px 68px 8px 0;
   }
 }
 
-.accordion-container .ac .ac-trigger::after {
+.about-me-accordion-container .about-me-ac .about-me-ac-trigger::after {
   content: '^';
   text-align: center;
   width: 40px;
@@ -154,7 +163,10 @@ picture {
   padding: 10px;
 }
 
-.accordion-container .ac.is-active > .ac-header .ac-trigger::after {
+.about-me-accordion-container
+  .about-me-ac.is-active
+  > .about-me-ac-header
+  .about-me-ac-trigger::after {
   content: '⌄';
   position: absolute;
   right: 10px;
@@ -162,7 +174,7 @@ picture {
 }
 
 /* Block Swiper */
-.js-swiper {
+.about-me-swiper {
   /* display: flex; */
   /* margin: 0 auto; */
   margin-top: 96px;
@@ -173,12 +185,12 @@ picture {
   color: #fafafa;
 }
 
-.js-swiper-wrapper {
+.about-me-swiper-wrapper {
   /* display: flex; */
   min-width: 0;
 }
 
-.js-swiper-slide {
+.about-me-swiper-slide {
   display: flex;
   padding: 88px 0;
   text-align: center;
@@ -186,4 +198,8 @@ picture {
   border: 1px solid #fafafa33;
   align-items: center;
   justify-content: center;
+}
+
+.about-me-swiper-button-next {
+  color: #fafafa;
 }
