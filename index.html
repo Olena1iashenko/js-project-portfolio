@@ -10,7 +10,7 @@
     <script type="module" crossorigin src="/js-project-portfolio/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/js-project-portfolio/assets/vendor-64e86976.js">
     <link rel="stylesheet" href="/js-project-portfolio/assets/vendor-c4244327.css">
-    <link rel="stylesheet" href="/js-project-portfolio/assets/index-77bbdd76.css">
+    <link rel="stylesheet" href="/js-project-portfolio/assets/index-9b9118d1.css">
   </head>
 
   <body>
@@ -267,28 +267,73 @@
                         class="projects-link">See project</a>
                 </div>
             </div>
-
+            <!-- swiper  -->
             <div class="projects-dark-part">
-                <picture class="projects-img">
-                    <!-- Mobile screen -->
-                    <source media="(max-width: 375px)" srcset="/js-project-portfolio/assets/first_page_mobile_375px@1x-5a6e4d1b.png 1x, /js-project-portfolio/assets/first_page_mobile_375px@2x-82fa640e.png 2x" />
-                    <source media="(min-width: 768px)" srcset="/js-project-portfolio/assets/first_page_desc_1440px@1x-b65a6855.png 1x, /js-project-portfolio/assets/first_page_desc_1440px@2x-4884f8bf.png 2x" />
-                    <source media="(min-width: 1440px)" srcset="/js-project-portfolio/assets/first_page_desc_1440px@1x-b65a6855.png 1x, /js-project-portfolio/assets/first_page_desc_1440px@2x-4884f8bf.png 2x" />
-                    <img class="projects-img" src="/js-project-portfolio/assets/first_page_mobile_375px@2x-82fa640e.png" alt="projects-png" />
-                </picture>
-
-
-
+                <!-- projects-swiper -->
+                <!-- <div class="projects-swiper-wrapper-main"> -->
+                <!-- swiper-wrapper -->
+                <ul class=" projects-swiper-wrapper">
+                    <!-- swiper-slide -->
+                    <li class="">
+                        <picture class="projects-img">
+                            <!-- Mobile screen -->
+                            <source media="(max-width: 375px)" srcset="/js-project-portfolio/assets/first_page_mobile_375px@1x-5a6e4d1b.png 1x, /js-project-portfolio/assets/first_page_mobile_375px@2x-82fa640e.png 2x" />
+                            <source media="(min-width: 768px)" srcset="/js-project-portfolio/assets/first_page_desc_1440px@1x-b65a6855.png 1x, /js-project-portfolio/assets/first_page_desc_1440px@2x-4884f8bf.png 2x" />
+                            <source media="(min-width: 1440px)" srcset="/js-project-portfolio/assets/first_page_desc_1440px@1x-b65a6855.png 1x, /js-project-portfolio/assets/first_page_desc_1440px@2x-4884f8bf.png 2x" />
+                            <img class="projects-img-default" src="/js-project-portfolio/assets/first_page_mobile_375px@2x-82fa640e.png"
+                                alt="projects-png" />
+                        </picture>
+                    </li>
+                    <!-- swiper-slide -->
+                    <!-- <li class="">
+                            <picture class="projects-img">
+                                <source media="(max-width: 375px)" srcset="
+                                    ./img/projects/first_page_mobile_375px@1x.png 1x,
+                                    ./img/projects/first_page_mobile_375px@2x.png 2x
+                                  " />
+                                <source media="(min-width: 768px)" srcset="
+                                ./img/projects/first_page_desc_1440px@1x.png 1x,
+                                ./img/projects/first_page_desc_1440px@2x.png 2x
+                                  " />
+                                <source media="(min-width: 1440px)" srcset="
+                                ./img/projects/first_page_desc_1440px@1x.png 1x,
+                                ./img/projects/first_page_desc_1440px@2x.png 2x
+                                  " />
+                                <img class="projects-img-default" src="./img/projects/first_page_mobile_375px@2x.png"
+                                    alt="projects-png" />
+                            </picture>
+                        </li> -->
+                    <!-- swiper-slide -->
+                    <!-- <li class="">
+                            <picture class="projects-img">
+                                <source media="(max-width: 375px)" srcset="
+                                    ./img/projects/first_page_mobile_375px@1x.png 1x,
+                                    ./img/projects/first_page_mobile_375px@2x.png 2x
+                                  " />
+                                <source media="(min-width: 768px)" srcset="
+                                ./img/projects/first_page_desc_1440px@1x.png 1x,
+                                ./img/projects/first_page_desc_1440px@2x.png 2x
+                                  " />
+                                <source media="(min-width: 1440px)" srcset="
+                                ./img/projects/first_page_desc_1440px@1x.png 1x,
+                                ./img/projects/first_page_desc_1440px@2x.png 2x
+                                  " />
+                                <img class="projects-img-default" src="./img/projects/first_page_mobile_375px@2x.png"
+                                    alt="projects-png" />
+                            </picture>
+                        </li> -->
+                </ul>
+                <!-- </div> -->
             </div>
         </div>
         <div class="projects-arrow-wrapper">
-            <button type="button" class="projects-btn_arrow js-btn_arrow-left">
+            <button type="button" class=" projects-btn_arrow js-btn_arrow-left">
                 <svg class="projects-arrow-icon" width="32" height="32">
                     <use href="/js-project-portfolio/assets/icons-1c5fc102.svg#icon-arrows-left"></use>
                 </svg>
             </button>
 
-            <button type="button" class="projects-btn_arrow js-btn_arrow-right">
+            <button type="button" class=" projects-btn_arrow js-btn_arrow-right">
 
                 <svg class="projects-arrow-icon" width="32" height="32">
                     <use href="/js-project-portfolio/assets/icons-1c5fc102.svg#icon-arrows-right"></use>
