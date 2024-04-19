@@ -1,43 +1,42 @@
-<footer id="section-footer">
+<footer class ="footer" id="section-footer">
   <div class="container footer-container">
-    <div class="title-box">
+         <h2 class="footer-title"> <div class="footer-title-top">Let&rsquo;s <span class="accent">work</span></div>
+        <div class="footer-title-bottom">together</div></h2>
       <picture>
         <source
           media="(min-width: 1440px)"
           srcset="
-                ./img/footer/footer-photo-desk@1x.jpg 1x,
-                ./img/footer/footer-photo-desk@1x.jpg            2x.jpg 2x
+                ./img/footer/footer-photo-desk@1x.webp 1x,
+                ./img/footer/footer-photo-desk@1x.webp 2x
               "
         />
         <source
           media="(min-width: 768px)"
           srcset="
-            ./img/footer/footer-photo-tab@1x.jpg 1x,
-            ./img/footer/footer-photo-tab@2x.jpg 2x
+            ./img/footer/footer-photo-tab@1x.webp 1x,
+            ./img/footer/footer-photo-tab@2x.webp 2x
           "
         />
         <source
           media="(min-width: 375px)"
           srcset="
-            ./img/footer/footer-photo-phone@1x.jpg 1x,
-            ./img/footer/footer-photo-phone@2x.jpg 2x
+            ./img/footer/footer-photo-phone@1x.webp 1x,
+            ./img/footer/footer-photo-phone@2x.webp 2x
           "
         />
         <img
-          src="./img/footer/footer-photo-phone@1x.jpg"
+          src="./img/footer/footer-photo-phone@1x.webp"
           width="44"
           height="44"
-          alt="photo"
+          alt="Developer's photo"
+          class="footer-title-image"
         />
       </picture>
-      <h2 class="footer-title">
-        LET'S <span class="accent">WORK</span> TOGETHER
-      </h2>
+
     </div>
 
-    <div class="form-container">
+   
       <form class="footer-form">
-        <div class="footer-form-box">
           <input
             class="footer-form-input"
             type="text"
@@ -49,52 +48,28 @@
             pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
             title="Please enter your email"
           />
-          <textarea
+          <input
             class="footer-form-message"
             name="user-comment"
             id="user-comment"
-            rows="5"
+           
             placeholder="comments"
             required
             minlength="10"
-          ></textarea>
-        </div>
-        <button class="footer-btn" type="submit">Send</button>
-      </form>
-      <!-- #region Modal window -->
-      <div class="backdrop is-open">
-        <div class="modal">
-          <button
-            class="modal-btn"
-            type="button"
-            aria-label="Modal close button"
-          >
-            <svg class="modal-btn-icon" width="8" height="8">
-              <use href="./images/icons.svg#icon-x"></use>
-            </svg>
-          </button>
-          <div class="modal-info">
-            <h2 class="modal-caption">
-              Thank you for your interest in cooperation!
-            </h2>
-            <p class="modal-text">
-              The manager will contact you shortly to discuss further details
-              and opportunities for cooperation. Please stay in touch.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- #endModal -->
+          ></input>
+          <button class="footer-btn" type="submit">Send</button>
+          </form>
+        
     </div>
-    <address class="address">
-      <ul class="address-list">
-        <li class="address-list-item">
-          <a href="mailto:lloydjefferson@gmail.com" class="address-link"
+    <address class="footer-address">
+      <ul class="footer-address-list">
+        <li class="footer-address-item">
+          <a href="mailto:lloydjefferson@gmail.com" class="footer-address-link"
             >lloydjefferson@gmail.com</a
           >
         </li>
-        <li class="address-list-item">
-          <a href="tel:+3801111111111" class="address-link"
+        <li class="footer-address-item">
+          <a href="tel:+3801111111111" class="footer-address-link"
             >+380 11 1111 11 11</a
           >
         </li>
@@ -102,3 +77,21 @@
     </address>
   </div>
 </footer>
+<!-- #region Modal window -->
+<div class="backdrop is-open">
+  <div class="modal">
+    <button class="modal-btn" type="button" aria-label="Modal close button">
+      <svg class="modal-btn-icon" width="22" height="22">
+        <use href="../img/icons.svg#icon-x"></use>
+      </svg>
+    </button>
+    <div class="modal-info">
+      <h2 class="modal-caption">Thank you for your interest in cooperation!</h2>
+      <p class="modal-text">
+        The manager will contact you shortly to discuss further details and
+        opportunities for cooperation. Please stay in touch.
+      </p>
+    </div>
+  </div>
+</div>
+<!-- #endModal -->

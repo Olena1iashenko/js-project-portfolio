@@ -1,0 +1,127 @@
+.hero-container {
+  /* background-image: url('./img/hero/mobile-fon@1x.webp'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  max-width: 375px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1440px) {
+  .section .hero-container {
+    padding: 32px 0;
+  }
+}
+
+.hero-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fafafa;
+  padding-top: 249px;
+  padding-bottom: 212px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-title {
+    font-size: 90px;
+    padding-top: 268px;
+    padding-bottom: 184px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero-title {
+    padding-left: 162px;
+    padding-bottom: 243px;
+  }
+
+  .box-word-wrap {
+    width: 1084px;
+  }
+}
+
+.box-navigation {
+  display: flex;
+  min-width: 320px;
+  gap: 4px;
+  width: 342px;
+}
+
+@media only screen and (min-width: 768px) {
+  .box-navigation {
+    float: right;
+    width: 473px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .box-navigation {
+    margin-right: 32px;
+  }
+}
+
+.list-contact-information {
+  display: flex;
+  gap: 4px;
+}
+
+.item-contact-information {
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 60px;
+  padding: 10px 12px;
+  width: 37px;
+  height: 37px;
+  background-color: transparent;
+}
+
+@media only screen and (min-width: 768px) {
+  .item-contact-information {
+    padding: 18px;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+.hero-link {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-link {
+    font-size: 16px;
+  }
+}
+
+.hero-link-mailto {
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 60px;
+  padding: 10px 12px;
+  width: 178px;
+  height: 37px;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-link-mailto {
+    padding: 18px 24px;
+    width: 223px;
+    height: 55px;
+    font-size: 16px;
+  }
+}
