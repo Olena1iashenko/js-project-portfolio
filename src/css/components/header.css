@@ -74,6 +74,18 @@
   }
 }
 
+.hidden {
+  display: none;
+}
+
+.menu-item {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  text-decoration-skip-ink: none;
+  color: #fafafa;
+}
+
 .header-burger-btn {
   position: absolute;
   top: 0;
@@ -102,16 +114,17 @@
 
 @media only screen and (min-width: 768px) {
   .link-order {
-    display: block;
-    font-family: 'Inter Tight', sans-serif;
+    display: flex;
+    align-items: center;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: -0.02em;
     color: #fafafa;
     border-radius: 60px;
-    padding: 14px 31px;
-    width: 164px;
-    height: 45px;
+    text-align: center;
+    padding: 18px 20px;
+    width: 163px;
+    height: 55px;
     background-color: #ed3b44;
     align-self: flex-start;
   }

@@ -33,11 +33,24 @@
       </picture>
       <p class="header-logo-text">jefferson*</p>
     </div>
-    <ul class="header-menu-nav">
+    <ul class="header-menu-nav" js="open-menu">
       Menu
+      <li class="menu-item hidden">
+        <a href="#section-about-me" class="header-link"></a>About me
+      </li>
+      <li class="menu-item hidden">
+        <a href="#section-benefits" class="header-link"></a>Benefits
+      </li>
+      <li class="menu-item hidden">
+        <a href="#section-pojects" class="header-link"></a>Projects
+      </li>
+      <li class="menu-item hidden">
+        <a href="#section-faq" class="header-link"></a>FAQ
+      </li>
     </ul>
     <button
       class="header-burger-btn"
+      js="open-modal"
       aria-label="button-open-menu"
       type="button"
     >
@@ -52,7 +65,7 @@
 <!-- #Modal -->
 
 <div class="mobile-modal-menu visually-hidden">
-  <button class="mobile-menu-btn" type="button">
+  <button class="mobile-menu-btn" js="close-moda" type="button">
     <svg class="mobile-svg" width="14" height="1">
       <use href="./img/icons.svg#icon-BurgerMenuClosed"></use>
     </svg>
