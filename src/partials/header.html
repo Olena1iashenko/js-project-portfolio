@@ -1,36 +1,71 @@
-<header class="container header-container" id="section-header">
-  <div class="container-logo">
-    <picture class="header-logo">
-      <source media="(max-width: 375px)" srcset="
-          ./img/header/mobile-logo@1x.jpg 1x,
-          ./img/header/mobile-logo@2x.jpg 2x
-        " />
-      <source media="(min-width: 768px)" srcset="
-          ./img/header/tablet-logo@1x.jpg 1x,
-          ./img/header/tablet-logo@2x.jpg 2x
-        " />
-      <source media="(min-width: 1440px)" srcset="
-          ./img/header/desktop-logo@1x.jpg 1x,
-          ./img/header/desktop-logo@2x.jpg 2x
-        " />
-      <img class="logo-img" src="./img/header/mobile-logo@1x.jpg" width="80" height="80" alt="logo photo" />
-    </picture>
-    <p class="header-logo-text">jefferson*</p>
+<header class="header" id="section-header">
+  <div class="container header-container">
+    <div class="container-logo">
+      <picture class="header-logo">
+        <source
+          media="(max-width: 375px)"
+          srcset="
+            ./img/header/mobile-logo@1x.jpg 1x,
+            ./img/header/mobile-logo@2x.jpg 2x
+          "
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="
+            ./img/header/tablet-logo@1x.jpg 1x,
+            ./img/header/tablet-logo@2x.jpg 2x
+          "
+        />
+        <source
+          media="(min-width: 1440px)"
+          srcset="
+            ./img/header/desktop-logo@1x.jpg 1x,
+            ./img/header/desktop-logo@2x.jpg 2x
+          "
+        />
+        <img
+          class="logo-img"
+          src="./img/header/mobile-logo@1x.jpg"
+          width="80"
+          height="80"
+          alt="logo photo"
+        />
+      </picture>
+      <p class="header-logo-text">jefferson*</p>
+    </div>
+    <ul class="header-menu-nav" js="open-menu">
+      Menu
+      <li class="menu-item hidden">
+        <a href="#section-about-me" class="header-link"></a>About me
+      </li>
+      <li class="menu-item hidden">
+        <a href="#section-benefits" class="header-link"></a>Benefits
+      </li>
+      <li class="menu-item hidden">
+        <a href="#section-pojects" class="header-link"></a>Projects
+      </li>
+      <li class="menu-item hidden">
+        <a href="#section-faq" class="header-link"></a>FAQ
+      </li>
+    </ul>
+    <button
+      class="header-burger-btn"
+      js="open-modal"
+      aria-label="button-open-menu"
+      type="button"
+    >
+      <svg class="burger-svg" width="24" height="12">
+        <use href="./img/icons.svg#icon-BurgerMenuOpen"></use>
+      </svg>
+    </button>
+    <a href="#section-footer" class="link-order">Order the project</a>
   </div>
-  <ul class="header-menu-nav">
-    Menu
-  </ul>
-  <button class="header-burger-btn" aria-label="button-open-menu" type="button">
-    <svg class="burger-svg" width="24" height="12">
-      <use href="./img/icons.svg#icon-BurgerMenuOpen"></use>
-    </svg>
-  </button>
-  <a href="#section-footer" class="link-order">Order the project</a>
 </header>
 
 <!-- #Modal -->
+
 <div class="mobile-modal-menu visually-hidden">
-  <button class="mobile-menu-btn" type="button">
+  <button class="mobile-menu-btn" js="close-moda" type="button">
     <svg class="mobile-svg" width="14" height="1">
       <use href="./img/icons.svg#icon-BurgerMenuClosed"></use>
     </svg>
@@ -50,6 +85,6 @@
     </li>
   </ul>
   <div class="box-modal-link">
-    <a href="#section-footer" class="modal-modal-link">Order the project</a>
+    <a href="#section-footer" class="mobile-modal-link">Order the project</a>
   </div>
 </div>
