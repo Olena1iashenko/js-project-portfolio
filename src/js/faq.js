@@ -37,12 +37,30 @@ import 'accordion-js/dist/accordion.min.css';
 //       });
 //     });
 //   });
-  
-  const listEl = document.querySelector(".faq-list");
-listEl.addEventListener("click", onBtnClick);
+//   ............................................................
+//   const listEl = document.querySelector(".faq-list");
+// listEl.addEventListener("click", onBtnClick);
 
-function onBtnClick(event) {
-  const target = event.target;
-  if (target.nodeName !== "BUTTON") return;
-  target.nextElementSibling.classList.toggle("active");
-}
+// function onBtnClick(event) {
+//   const target = event.target;
+//   if (target.nodeName !== "BUTTON") return;
+//   target.nextElementSibling.classList.toggle("active");
+// }
+
+
+document.querySelectorAll('.ac-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const listItem = button.closest('.faq-item');
+      const isOpen = listItem.classList.contains('open');
+      
+      // Закрываем все открытые ответы
+      document.querySelectorAll('.faq-item.open').forEach(item => {
+        if (item !== listItem) {
+          item.classList.remove('open');
+        }
+      });
+      
+      // Открываем/закрываем текущий ответ
+      listItem.classList.toggle('open', !isOpen);
+    });
+  });
