@@ -15,28 +15,35 @@ const accordion = new Accordion(container, {
 
 // Swiper
 
-Swiper.use([Navigation, Pagination]);
+// Swiper.use([Navigation, Pagination]);
 const swiper = new Swiper('.swiper', {
-    modules: [Navigation, Pagination],
-    loop: true,
+    // modules: [Navigation, Pagination],
+  loop: false,
+  slidesPerView: 6,
+  spaceBetween: 0,
 //     autoplay: {
 //     delay: 3000,
 //   },
     navigation: {
-        nextEl: '.swiper-button-next',
+      nextEl: '.swiper-button-next',
+      prevEl: '.reviews-btn-left',
     },
-    // slidesPerView: 2,
   // Responsive breakpoints
   breakpoints: {
+    // when window width is >= 320px
+    320: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
     // when window width is >= 768px
     768: {
-    //   slidesPerView: 3,
-    //   spaceBetween: 0
+      slidesPerView: 3,
+      spaceBetween: 0
     },
     // when window width is >= 640px
     1440: {
-    //   slidesPerView: 6,
-    //   spaceBetween: 40
+      slidesPerView: 6,
+      spaceBetween: 0
     }
   }
 });
