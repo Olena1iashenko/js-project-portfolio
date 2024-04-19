@@ -21,43 +21,42 @@
             </div>
 
             <div class="projects-dark-part">
-
-
-                <picture>
-                    <!-- Desktop screen -->
-                    <source media="(min-width: 1440px)" srcset="../img/projects/first_page_desc_1440px@1x.png 1x,
-                        ../img/projects/first_page_desc_1440px@2x.png 2x
-                          " />
-                    <!-- Tablet screen -->
-                    <source media="(min-width: 768px)"
-                        srcset="../img/projects/first_page_tab_768px@1x.png 1x, ../img/projects/first_page_tab_768px@2x.png 2x" />
+                <picture class="projects-img">
                     <!-- Mobile screen -->
-                    <source media="(max-width: 767px)"
-                        srcset="../img/projects/first_page_mobile_375px@1x.png 1x, ../img/projects/first_page_mobile_375px@2x.png 2x" />
-                    <img class="project-img" src=".../img/projects/first_page_mobile_375px@1x.png" alt="project-img" />
+                    <source media="(max-width: 375px)" srcset="
+                        ./img/projects/first_page_mobile_375px@1x.png 1x,
+                        ./img/projects/first_page_mobile_375px@2x.png 2x
+                      " />
+                    <source media="(min-width: 768px)" srcset="
+                    ./img/projects/first_page_desc_1440px@1x.png 1x,
+                    ./img/projects/first_page_desc_1440px@2x.png 2x
+                      " />
+                    <source media="(min-width: 1440px)" srcset="
+                    ./img/projects/first_page_desc_1440px@1x.png 1x,
+                    ./img/projects/first_page_desc_1440px@2x.png 2x
+                      " />
+                    <img class="projects-img" src="./img/projects/first_page_mobile375px@2x.png" alt="projects-png" />
                 </picture>
 
 
 
-                <img src="../img/projects/first_page_mobile375px@2x.png" alt="">
-
             </div>
-            <div class="projects-arrow-wrapper">
-                <button type="button" class="projects-btn_arrow js-btn_arrow-left">
-                    <svg class="projects-arrow-icon" width="52" height="52">
-                        <use href="../img/icons.svg#icon-arrows-left"></use>
-                    </svg>
-                </button>
+        </div>
+        <div class="projects-arrow-wrapper">
+            <button type="button" class="projects-btn_arrow js-btn_arrow-left">
+                <svg class="projects-arrow-icon" width="32" height="32">
+                    <use href="/img/icons.svg#icon-arrows-left"></use>
+                </svg>
+            </button>
 
-                <button type="button" class="projects-btn_arrow js-btn_arrow-right">
+            <button type="button" class="projects-btn_arrow js-btn_arrow-right">
 
-                    <svg class="projects-arrow-icon" width="52" height="52">
-                        <use href="./img/icons.svg#icon-arrows-right"></use>
-                    </svg>
+                <svg class="projects-arrow-icon" width="32" height="32">
+                    <use href="/img/icons.svg#icon-arrows-right"></use>
+                </svg>
 
-                </button>
+            </button>
 
-            </div>
         </div>
     </div>
 </section>
