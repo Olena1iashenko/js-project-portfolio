@@ -87,15 +87,12 @@
   }
 }
 
-/* .projects-arrow-icon{
+/* .reviews-arrow-icon{
 
   stroke: #FAFAFA;
 }
-.reviews-btn-left .projects-arrow-icon{
- 
-  stroke: #3B3B3B;
-} */
+ */
 
-.swiper-button-disabled .projects-arrow-icon {
+.swiper-button-disabled .reviews-arrow-icon {
   stroke: #3b3b3b;
 }
