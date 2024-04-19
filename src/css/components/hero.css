@@ -53,10 +53,23 @@
 }
 
 
+@keyframes move-right-ul {
+  0% {
+      transform: translateX(358px);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
 .list-style_hero {
   display: flex;
   gap: 4px;
   flex-wrap: wrap;
+  animation: move-right-ul 1500ms ease-in 250ms 1 both;
 
 }
 
