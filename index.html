@@ -10,34 +10,69 @@
     <script type="module" crossorigin src="/js-project-portfolio/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/js-project-portfolio/assets/vendor-64e86976.js">
     <link rel="stylesheet" href="/js-project-portfolio/assets/vendor-c4244327.css">
-    <link rel="stylesheet" href="/js-project-portfolio/assets/index-00d62188.css">
+    <link rel="stylesheet" href="/js-project-portfolio/assets/index-69ba49c9.css">
   </head>
 
   <body>
-    <header class="container header-container" id="section-header">
-  <div class="container-logo">
-    <picture class="header-logo">
-      <source media="(max-width: 375px)" srcset="/js-project-portfolio/assets/mobile-logo@1x-0f9b365f.jpg 1x, /js-project-portfolio/assets/mobile-logo@2x-4195b9d7.jpg 2x" />
-      <source media="(min-width: 768px)" srcset="/js-project-portfolio/assets/mobile-logo@1x-0f9b365f.jpg 1x, /js-project-portfolio/assets/mobile-logo@2x-4195b9d7.jpg 2x" />
-      <source media="(min-width: 1440px)" srcset="/js-project-portfolio/assets/mobile-logo@1x-0f9b365f.jpg 1x, /js-project-portfolio/assets/mobile-logo@2x-4195b9d7.jpg 2x" />
-      <img class="logo-img" src="/js-project-portfolio/assets/mobile-logo@1x-0f9b365f.jpg" width="80" height="80" alt="logo photo" />
-    </picture>
-    <p class="header-logo-text">jefferson*</p>
+    <header class="header" id="section-header">
+  <div class="container header-container">
+    <div class="container-logo">
+      <picture class="header-logo">
+        <source
+          media="(max-width: 375px)"
+          srcset="/js-project-portfolio/assets/mobile-logo@1x-0f9b365f.jpg 1x, /js-project-portfolio/assets/mobile-logo@2x-4195b9d7.jpg 2x"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="/js-project-portfolio/assets/mobile-logo@1x-0f9b365f.jpg 1x, /js-project-portfolio/assets/mobile-logo@2x-4195b9d7.jpg 2x"
+        />
+        <source
+          media="(min-width: 1440px)"
+          srcset="/js-project-portfolio/assets/mobile-logo@1x-0f9b365f.jpg 1x, /js-project-portfolio/assets/mobile-logo@2x-4195b9d7.jpg 2x"
+        />
+        <img
+          class="logo-img"
+          src="/js-project-portfolio/assets/mobile-logo@1x-0f9b365f.jpg"
+          width="80"
+          height="80"
+          alt="logo photo"
+        />
+      </picture>
+      <p class="header-logo-text">jefferson*</p>
+    </div>
+    <ul class="header-menu-nav" js="open-menu">
+      Menu
+      <li class="menu-item hidden">
+        <a href="#section-about-me" class="header-link"></a>About me
+      </li>
+      <li class="menu-item hidden">
+        <a href="#section-benefits" class="header-link"></a>Benefits
+      </li>
+      <li class="menu-item hidden">
+        <a href="#section-pojects" class="header-link"></a>Projects
+      </li>
+      <li class="menu-item hidden">
+        <a href="#section-faq" class="header-link"></a>FAQ
+      </li>
+    </ul>
+    <button
+      class="header-burger-btn"
+      js="open-modal"
+      aria-label="button-open-menu"
+      type="button"
+    >
+      <svg class="burger-svg" width="24" height="12">
+        <use href="/js-project-portfolio/assets/icons-1c5fc102.svg#icon-BurgerMenuOpen"></use>
+      </svg>
+    </button>
+    <a href="#section-footer" class="link-order">Order the project</a>
   </div>
-  <ul class="header-menu-nav">
-    Menu
-  </ul>
-  <button class="header-burger-btn" aria-label="button-open-menu" type="button">
-    <svg class="burger-svg" width="24" height="12">
-      <use href="/js-project-portfolio/assets/icons-1c5fc102.svg#icon-BurgerMenuOpen"></use>
-    </svg>
-  </button>
-  <a href="#section-footer" class="link-order">Order the project</a>
 </header>
 
 <!-- #Modal -->
+
 <div class="mobile-modal-menu visually-hidden">
-  <button class="mobile-menu-btn" type="button">
+  <button class="mobile-menu-btn" js="close-moda" type="button">
     <svg class="mobile-svg" width="14" height="1">
       <use href="/js-project-portfolio/assets/icons-1c5fc102.svg#icon-BurgerMenuClosed"></use>
     </svg>
@@ -57,9 +92,10 @@
     </li>
   </ul>
   <div class="box-modal-link">
-    <a href="#section-footer" class="modal-modal-link">Order the project</a>
+    <a href="#section-footer" class="mobile-modal-link">Order the project</a>
   </div>
 </div>
+
     <main>
       <section class="section-hero" id="section-hero">
   <div class="container">
