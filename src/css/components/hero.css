@@ -1,7 +1,12 @@
 .hero-container {
   /* background-image: url('./img/hero/mobile-fon@1x.webp'); */
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  max-width: 375px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -43,12 +48,15 @@
 
 .box-navigation {
   display: flex;
+  min-width: 320px;
   gap: 4px;
+  width: 342px;
 }
 
 @media only screen and (min-width: 768px) {
   .box-navigation {
     float: right;
+    width: 473px;
   }
 }
 
