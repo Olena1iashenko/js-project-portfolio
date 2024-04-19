@@ -1,9 +1,13 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
+console.log(Accordion);
 
-// const faqAccordion = document.querySelector('.faq-list');
-// const accordion = new Accordion(faqAccordion, {
+ new Accordion('.faq-list');
+
+// const container = document.querySelector('.accordion-container');
+// console.log(container);
+// const accordion = new Accordion(container, {
 //     openOnInit: [0],
 //     showMultiple: true,
 //     onOpen: (currEl) => console.log('Open!', currEl)
@@ -48,19 +52,23 @@ import 'accordion-js/dist/accordion.min.css';
 // }
 
 
-document.querySelectorAll('.ac-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const listItem = button.closest('.faq-item');
-      const isOpen = listItem.classList.contains('open');
+
+
+
+
+// document.querySelectorAll('.ac-btn').forEach(button => {
+//     button.addEventListener('click', () => {
+//       const listItem = button.closest('.faq-item');
+//       const isOpen = listItem.classList.contains('open');
       
-      // Закрываем все открытые ответы
-      document.querySelectorAll('.faq-item.open').forEach(item => {
-        if (item !== listItem) {
-          item.classList.remove('open');
-        }
-      });
+//       // Закрываем все открытые ответы
+//       document.querySelectorAll('.faq-item.open').forEach(item => {
+//         if (item !== listItem) {
+//           item.classList.remove('open');
+//         }
+//       });
       
-      // Открываем/закрываем текущий ответ
-      listItem.classList.toggle('open', !isOpen);
-    });
-  });
+//       // Открываем/закрываем текущий ответ
+//       listItem.classList.toggle('open', !isOpen);
+//     });
+//   });
