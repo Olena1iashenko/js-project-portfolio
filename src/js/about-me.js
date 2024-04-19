@@ -1,12 +1,13 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 // Accordion
 
-const container = document.querySelector('.accordion-container');
-console.log(container);
+const container = document.querySelector('.about-me-accordion-container');
 const accordion = new Accordion(container, {
     openOnInit: [0],
     showMultiple: true,
@@ -15,28 +16,32 @@ const accordion = new Accordion(container, {
 
 // Swiper
 
-Swiper.use([Navigation, Pagination]);
-const swiper = new Swiper('.swiper', {
-    modules: [Navigation, Pagination],
-    loop: true,
-//     autoplay: {
-//     delay: 3000,
-//   },
-    navigation: {
-        nextEl: '.swiper-button-next',
-    },
-    // slidesPerView: 2,
+// Swiper.use([Navigation]);
+const swiper = new Swiper('.about-me-swiper', {
+  modules: [Navigation],
+  loop: true,
+  slidesOffsetAfter: 10,
+  // slidesPerView: 6,
+  // spaceBetween: 0,
+  navigation: {
+    nextEl: '.about-me-swiper-button-next',
+  },
   // Responsive breakpoints
   breakpoints: {
+    // when window width is >= 320px
+    320: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
     // when window width is >= 768px
     768: {
-    //   slidesPerView: 3,
-    //   spaceBetween: 0
+      slidesPerView: 3,
+      spaceBetween: 0
     },
     // when window width is >= 640px
     1440: {
-    //   slidesPerView: 6,
-    //   spaceBetween: 40
+      slidesPerView: 6,
+      spaceBetween: 0
     }
   }
 });

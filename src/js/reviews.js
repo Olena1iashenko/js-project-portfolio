@@ -19,7 +19,7 @@ function fetchReviews() {
       console.error(error);
     });
 
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('.reviews-swiper', {
     // Optional parameters обязательніе
     loop: false,
     slidesPerView: 4,
