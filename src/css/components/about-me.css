@@ -32,28 +32,29 @@
 @media only screen and (min-width: 768px) {
   .about-me-wrapper {
     padding: 64px;
-    padding-bottom: 436px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .about-me-wrapper {
     margin-bottom: 0;
-    height: auto;
+    max-width: 680px;
   }
 }
 
-about-me-picture {
+.about-me-picture {
   display: flex;
   flex-direction: column;
   border-radius: 24px;
   width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
 @media only screen and (min-width: 1440px) {
-  about-me-picture {
-    display: block;
+  .about-me-picture {
+    /* display: block; */
+    width: 100%;
   }
 }
 
@@ -68,6 +69,7 @@ about-me-picture {
   .about-me-p-title {
     font-size: 38px;
     line-height: 1.05;
+    /* max-width: 552px; */
   }
 }
 
