@@ -73,10 +73,14 @@
 //         modal.style.display = "none";
 //     }
 // });
+
+
+// Import
 import axios from 'axios';
 import iziToast from 'izitoast';
 import errorIcon from '../img/icons.svg#icon-x';
 
+// Refs
 const formData = document.querySelector('.footer-form');
 const emailInput = document.querySelector('.footer-form-input');
 const commentInput = document.querySelector('.footer-form-message');
@@ -84,116 +88,169 @@ const message = document.querySelector('.input-email-text');
 const backdrop = document.querySelector('.backdrop');
 const modalWindow = document.querySelector('.modal');
 const closeModalBtn = document.querySelector('.modal-btn');
+const clickSubmitBtn = document.querySelector('.footer-btn'); 
 
-function createUserComment(mail, comment) {
-  return {
-    email: mail,
-    comment: comment,
-    id: Date.now()
-  };
+
+function validateEmail(email) {
+  const pattern = emailInput.getAttribute('pattern');
+  const validRegex = new RegExp(pattern);
+  return validRegex.test(email);
 }
 
-function closeModal(event){
-    if (
-        event.target.classList.contains('backdrop') ||
-      event.target.nodeName === 'svg' ||
-      event.target.nodeName === 'BUTTON'
-    ) {
-        document.body.classList.remove('backdrop-after');
-        backdrop.classList.remove('backdrop-is-open');
-        modalWindow.classList.remove('modal-is-open');
-        closeModalBtn.removeEventListener('click', closeModal);
-    }
-};
 
-function onEscClose(event) {
-  console.log(event.key);
-  if (event.key === 'Escape') {
-    scrollUpBtn.classList.add('visible');
-    document.body.classList.remove('backdrop-after');
-    backdrop.classList.remove('backdrop-is-open');
-    modalWindow.classList.remove('modal-is-open');
-    document.removeEventListener('keydown', onEscClose); 
-  }
+function validateComment(comment) {
+  return comment.length >= 10; 
 }
 
-export function showMessage(icon, message, bgr) {
+// IziToast function
+function showMessage(icon, message, bgColor) {
   iziToast.show({
     iconUrl: icon,
     titleColor: 'White',
     titleSize: '24px',
-    message,
+    message: message,
     messageColor: 'White',
     messageSize: '16px',
-    backgroundColor: bgr,
+    backgroundColor: bgColor,
     position: 'topRight',
     timeout: 3000,
   });
 }
 
+// Axios async function
+axios.defaults.baseURL = 'https://portfolio-js.b.goit.study/api';
+
+async function userForm(userData) {
+  const body = {
+    email: userData.email,
+    comment: userData.comment
+  };
+  const ENDPOINT = '/requests';
+
+  return axios.post(ENDPOINT, body);
+}
+
+
+function handleSuccess() {
+  emailInput.classList.add('input-correct');
+  message.classList.add('correct-text');
+  message.textContent = 'Success!';
+}
+
+
+function handleFailure() {
+  message.classList.add('incorrect-text');
+  message.textContent = 'Invalid email, try again';
+  emailInput.classList.add('input-incorrect');
+}
+
+//  fill functions
+function afterFillSuccess() {
+  message.classList.remove('correct-text');
+  emailInput.classList.remove('input-correct');
+}
+
+function afterFillFailure() {
+  message.classList.remove('incorrect-text');
+  emailInput.classList.remove('input-incorrect');
+}
+
+//  modal functions
+function handleCloseModal() {
+  document.body.classList.remove('backdrop-after');
+  backdrop.classList.remove('backdrop-is-open');
+  modalWindow.classList.remove('modal-is-open');
+}
+
+
+function handleOpenModal() {
+   document.body.classList.add('backdrop-after');
+  backdrop.classList.add('backdrop-is-open');
+  modalWindow.classList.add('modal-is-open');
+}
+
+
+function closeModal(event) {
+  if (
+    event.target.classList.contains('backdrop') ||
+    event.target.nodeName === 'svg' ||
+    event.target.nodeName === 'BUTTON'
+  ) {
+    handleCloseModal();
+    closeModalBtn.removeEventListener('click', closeModal);
+  }
+}
+
+function onEscClose(event) {
+  if (event.key === 'Escape') {
+    handleCloseModal();
+    document.removeEventListener('keydown', onEscClose);
+  }
+}
+
+function onSubmitButton() {
+  if (!validateEmail(clickSubmitBtn.form.elements.email.value.trim())) {
+    message.handleFailure();
+  }
+};
+
 async function onSubmit(event) {
+  event.preventDefault();
+
   try {
-    event.preventDefault();
-    document.body.classList.add('loading');
-    const mail = emailInput.value;
-    const comment = commentInput.value;
-    
-    if (comment.length < 10) {
+    const email = emailInput.value.trim();
+    const comment = commentInput.value.trim();
+
+    if (email === '' || comment === '') {
+      showMessage(errorIcon, 'Both fields are required. Please provide your email and comment before sending.', '#e74a3b');
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      throw new Error('Invalid email format');
+    }
+
+    if (!validateComment(comment)) {
       throw new Error('Comment must be at least 10 characters long');
     }
 
-    await axios.post('https://portfolio-js.b.goit.study/api/requests/', createUserComment(mail, comment));
-    event.target.reset();
-    document.body.classList.add('backdrop-after');
-    backdrop.classList.add('backdrop-is-open');
-    modalWindow.classList.add('modal-is-open');
-    closeModalBtn.addEventListener('click', closeModal);
+  
+    const response = await userForm({ email, comment });
+    formData.reset();
+    handleSuccess();
+    handleOpenModal();
+    document.body.addEventListener('click', closeModal);
     window.addEventListener('keydown', onEscClose);
   } catch (error) {
+  
     showMessage(errorIcon, error.message, '#e74a3b');
-  } finally {
-    document.body.classList.remove('loading');
   }
 }
 
-function validateEmail(mail) {
-  const pattern = emailInput.getAttribute('pattern');
-  const validRegex = new RegExp(pattern);
-  return validRegex.test(mail);
-}
 
 function handleInputCheck() {
-  const mail = emailInput.value;
-  if (mail === '') {
+  const email = emailInput.value.trim();
+
+  if (email === '') {
     return;
   }
-  if (validateEmail(mail)) {
-    message.classList.add('correct-text');
-    emailInput.classList.add('input-correct');
-    message.textContent = 'Success!';
-    setTimeout(() => {
-      message.classList.remove('correct-text');
-      emailInput.classList.remove('input-correct');
-    }, 2000);
+
+  if (validateEmail(email)) {
+    handleSuccess();
+    setTimeout(afterFillSuccess, 2000);
   } else {
-    message.classList.add('incorrect-text');
-    message.textContent = 'Invalid email, try again';
-    emailInput.classList.add('input-incorrect');
-    setTimeout(() => {
-      message.classList.remove('incorrect-text');
-      emailInput.classList.remove('input-incorrect');
-    }, 2000);
+    handleFailure();
+    setTimeout(afterFillFailure, 2000);
   }
 }
 
-function truncateText(inputElement, maxLength) {
-    if (inputElement.value.length > maxLength) {
-        inputElement.value = inputElement.value.substring(0, maxLength - 3) + '...';
-    }
-}
-
+// event listener 
 formData.addEventListener('submit', onSubmit);
-emailInput.addEventListener('blur', handleInputCheck);
-emailInput.addEventListener('input', function() {
-    truncateText(emailInput, 50); 
-});
+
+
+clickSubmitBtn.addEventListener('submit', onSubmitButton);
+
+
+emailInput.addEventListener('input', handleInputCheck);
+
+commentInput.addEventListener('input', handleInputCheck);
