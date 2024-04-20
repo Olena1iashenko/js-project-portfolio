@@ -20,11 +20,13 @@
 /* margin-top: 32px; */
 
 .projects-light-part {
+  max-width: 704px;
   background: #fafafa;
   border-radius: 24px 24px 0 0;
 }
 @media only screen and (min-width: 1440px) {
   .projects-light-part {
+    max-width: 690px;
     border-radius: 24px 0 0 24px;
   }
 }
@@ -67,32 +69,36 @@
 @media only screen and (min-width: 768px) {
   .projects-description {
     margin-top: 164px;
-    padding: 0 64px;
+    padding: 0 164px 0 64px;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.03em;
   }
 }
 @media only screen and (min-width: 1440px) {
   .projects-description {
     margin-top: 223px;
-    padding: 0 64px;
+    padding: 0 129px 0 64px;
   }
 }
 
 .projects-link {
-  display: block;
   margin: 32px 32px 0 32px;
   overflow: hidden;
-
   cursor: pointer;
   border-radius: 60px;
   padding: 13px 32px;
   width: 141px;
   background-color: #ed3b44;
   color: #fafafa;
+  font-size: 16px;
+  letter-spacing: -0.02em;
 }
 
 @media only screen and (min-width: 768px) {
   .projects-link {
     margin: 32px 32px 0 64px;
+    padding: 18px 50px;
   }
 }
 
@@ -102,6 +108,7 @@
 
 @media only screen and (min-width: 768px) {
   .projects-link-wrapper {
+    margin-top: 50px;
     padding-bottom: 64px;
   }
 }
@@ -187,4 +194,15 @@
 .js-btn_arrow-active {
 }
 .js-btn_arrow-passive {
+}
+
+.projects-swiper {
+  width: 343px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .projects-swiper {
+    width: 704px;
+  }
 }

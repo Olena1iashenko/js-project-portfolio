@@ -1,4 +1,4 @@
-// import './header';
+import './header';
 import './about-me';
 import './projects';
 import './covers';
