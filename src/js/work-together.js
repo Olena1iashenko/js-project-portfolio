@@ -93,10 +93,11 @@ function createUserComment(mail, comment) {
   };
 }
 
-const closeModal = event => {
+function closeModal(event){
     if (
         event.target.classList.contains('backdrop') ||
-        event.target.nodeName === 'svg'
+      event.target.nodeName === 'svg' ||
+      event.target.nodeName === 'BUTTON'
     ) {
         document.body.classList.remove('backdrop-after');
         backdrop.classList.remove('backdrop-is-open');
@@ -194,5 +195,5 @@ function truncateText(inputElement, maxLength) {
 formData.addEventListener('submit', onSubmit);
 emailInput.addEventListener('blur', handleInputCheck);
 emailInput.addEventListener('input', function() {
-    truncateText(emailInput, 50); // Assuming maximum length is 50 characters
+    truncateText(emailInput, 50); 
 });
