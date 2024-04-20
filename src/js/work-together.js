@@ -110,7 +110,7 @@ function onEscClose(event) {
     scrollUpBtn.classList.add('visible');
     document.body.classList.remove('backdrop-opened');
     backdrop.classList.remove('backdrop-is-open');
-    modalWindow.classList.remove('window-is-open');
+    modalWindow.classList.remove('modal-is-open');
     document.removeEventListener('keydown', onEscClose); 
   }
 }
