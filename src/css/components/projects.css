@@ -83,21 +83,22 @@
 }
 
 .projects-link {
-  display: block;
   margin: 32px 32px 0 32px;
   overflow: hidden;
-
   cursor: pointer;
   border-radius: 60px;
   padding: 13px 32px;
   width: 141px;
   background-color: #ed3b44;
   color: #fafafa;
+  font-size: 16px;
+  letter-spacing: -0.02em;
 }
 
 @media only screen and (min-width: 768px) {
   .projects-link {
     margin: 32px 32px 0 64px;
+    padding: 18px 50px;
   }
 }
 
@@ -107,6 +108,7 @@
 
 @media only screen and (min-width: 768px) {
   .projects-link-wrapper {
+    margin-top: 50px;
     padding-bottom: 64px;
   }
 }
@@ -195,7 +197,8 @@
 }
 
 .projects-swiper {
-  max-width: 343px;
+  width: 343px;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 768px) {
