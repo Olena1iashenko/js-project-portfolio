@@ -142,7 +142,7 @@ async function onSubmit(event) {
       throw new Error('Comment must be at least 10 characters long');
     }
 
-    await axios.post('/requests', createUserComment(mail, comment));
+    await axios.post('https://portfolio-js.b.goit.study/api/requests/', createUserComment(mail, comment));
     event.target.reset();
     document.body.classList.add('backdrop-after');
     backdrop.classList.add('backdrop-is-open');
