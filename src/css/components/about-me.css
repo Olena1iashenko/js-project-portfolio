@@ -69,7 +69,6 @@
   .about-me-p-title {
     font-size: 38px;
     line-height: 1.05;
-    /* max-width: 552px; */
   }
 }
 
@@ -115,6 +114,7 @@
   text-transform: uppercase;
   color: #fafafa66;
   padding: 0 0 16px;
+  display: flex;
 }
 
 .about-me-accordion-container
@@ -151,11 +151,11 @@
   }
 }
 
+.about-me-top-icon,
 .about-me-accordion-container .about-me-ac .about-me-ac-trigger::after {
-  content: '^';
+  content: '';
   text-align: center;
-  width: 40px;
-  height: 40px;
+
   transform: translate(0, -60%);
   position: absolute;
   right: 10px;
@@ -163,16 +163,35 @@
   border: 1px solid #fafafa33;
   border-radius: 100px;
   padding: 10px;
+  color: #fafafa;
 }
 
+.about-me-accordion-container .about-me-ac .about-me-ac-trigger::after {
+  width: 36px;
+  height: 36px;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-me-accordion-container .about-me-ac .about-me-ac-trigger::after {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.about-me-top-icon,
 .about-me-accordion-container
   .about-me-ac.is-active
   > .about-me-ac-header
   .about-me-ac-trigger::after {
-  content: '⌄';
+  content: '';
   position: absolute;
   right: 10px;
   top: 60%;
+  stroke: #fafafa;
+}
+
+.about-me-accordion-container .about-me-ac.is-active > .about-me-top-icon {
+  transform: rotate(180deg);
 }
 
 /* Block Swiper */
@@ -203,5 +222,24 @@
 }
 
 .about-me-swiper-button-next {
+  /* background: none; */
+  display: flex;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  background: none;
+  justify-content: center;
+}
+
+.about-me-arrow-icon {
+  box-sizing: border-box;
   color: #fafafa;
+  width: 40px;
+  height: 40px;
+}
+
+.about-me-swiper-button-next .swiper-button-next:after {
+  content: 'none';
 }
