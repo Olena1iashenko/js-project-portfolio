@@ -93,10 +93,11 @@ function createUserComment(mail, comment) {
   };
 }
 
-const closeModal = event => {
+function closeModal(event){
     if (
         event.target.classList.contains('backdrop') ||
-        event.target.nodeName === 'svg'
+      event.target.nodeName === 'svg' ||
+      event.target.nodeName === 'BUTTON'
     ) {
         document.body.classList.remove('backdrop-after');
         backdrop.classList.remove('backdrop-is-open');
@@ -104,16 +105,18 @@ const closeModal = event => {
         closeModalBtn.removeEventListener('click', closeModal);
     }
 };
+
 function onEscClose(event) {
   console.log(event.key);
   if (event.key === 'Escape') {
     scrollUpBtn.classList.add('visible');
-    document.body.classList.remove('backdrop-opened');
+    document.body.classList.remove('backdrop-after');
     backdrop.classList.remove('backdrop-is-open');
     modalWindow.classList.remove('modal-is-open');
     document.removeEventListener('keydown', onEscClose); 
   }
 }
+
 export function showMessage(icon, message, bgr) {
   iziToast.show({
     iconUrl: icon,
@@ -144,8 +147,8 @@ async function onSubmit(event) {
     document.body.classList.add('backdrop-after');
     backdrop.classList.add('backdrop-is-open');
     modalWindow.classList.add('modal-is-open');
-      closeModalBtn.addEventListener('click', closeModal);
-       window.addEventListener('keydown', onEscClose);
+    closeModalBtn.addEventListener('click', closeModal);
+    window.addEventListener('keydown', onEscClose);
   } catch (error) {
     showMessage(errorIcon, error.message, '#e74a3b');
   } finally {
@@ -183,5 +186,14 @@ function handleInputCheck() {
   }
 }
 
+function truncateText(inputElement, maxLength) {
+    if (inputElement.value.length > maxLength) {
+        inputElement.value = inputElement.value.substring(0, maxLength - 3) + '...';
+    }
+}
+
 formData.addEventListener('submit', onSubmit);
 emailInput.addEventListener('blur', handleInputCheck);
+emailInput.addEventListener('input', function() {
+    truncateText(emailInput, 50); 
+});
