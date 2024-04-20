@@ -20,11 +20,13 @@
 /* margin-top: 32px; */
 
 .projects-light-part {
+  max-width: 704px;
   background: #fafafa;
   border-radius: 24px 24px 0 0;
 }
 @media only screen and (min-width: 1440px) {
   .projects-light-part {
+    max-width: 690px;
     border-radius: 24px 0 0 24px;
   }
 }
@@ -67,13 +69,16 @@
 @media only screen and (min-width: 768px) {
   .projects-description {
     margin-top: 164px;
-    padding: 0 64px;
+    padding: 0 164px 0 64px;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.03em;
   }
 }
 @media only screen and (min-width: 1440px) {
   .projects-description {
     margin-top: 223px;
-    padding: 0 64px;
+    padding: 0 129px 0 64px;
   }
 }
 
@@ -187,4 +192,14 @@
 .js-btn_arrow-active {
 }
 .js-btn_arrow-passive {
+}
+
+.projects-swiper {
+  max-width: 343px;
+}
+
+@media only screen and (min-width: 768px) {
+  .projects-swiper {
+    width: 704px;
+  }
 }
