@@ -10,7 +10,7 @@
     <script type="module" crossorigin src="/js-project-portfolio/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/js-project-portfolio/assets/vendor-2d2fb6bf.js">
     <link rel="stylesheet" href="/js-project-portfolio/assets/vendor-c4244327.css">
-    <link rel="stylesheet" href="/js-project-portfolio/assets/index-9b7b6282.css">
+    <link rel="stylesheet" href="/js-project-portfolio/assets/index-c59d5d0c.css">
   </head>
 
   <body>
@@ -40,21 +40,25 @@
       </picture>
       <p class="header-logo-text">jefferson*</p>
     </div>
-    <ul class="header-menu-nav open-menu">
-      Menu
-      <li class="menu-item hidden">
-        <a href="#section-about-me" class="header-link"></a>About me
-      </li>
-      <li class="menu-item hidden">
-        <a href="#section-benefits" class="header-link"></a>Benefits
-      </li>
-      <li class="menu-item hidden">
-        <a href="#section-pojects" class="header-link"></a>Projects
-      </li>
-      <li class="menu-item hidden">
-        <a href="#section-faq" class="header-link"></a>FAQ
-      </li>
-    </ul>
+    <div class="">
+      <ul class="header-menu-nav">
+        Menu
+        <div class="menu-item-box hidden">
+          <li class="menu-item">
+            <a href="#section-about-me" class="main-header-link">About me</a>
+          </li>
+          <li class="menu-item">
+            <a href="#section-benefits" class="main-header-link">Benefits</a>
+          </li>
+          <li class="menu-item">
+            <a href="#section-pojects" class="main-header-link">Projects</a>
+          </li>
+          <li class="menu-item">
+            <a href="#section-faq" class="main-header-link">FAQ</a>
+          </li>
+        </div>
+      </ul>
+    </div>
     <button
       class="header-burger-btn open-modal"
       aria-label="button-open-menu"
@@ -70,24 +74,24 @@
 
 <!-- #Modal -->
 
-<div class="mobile-modal-menu visually-hidden">
-  <button class="mobile-menu-btn" js="close-moda" type="button">
+<div class="mobile-modal-menu hidden">
+  <button class="mobile-menu-btn close-modal" type="button">
     <svg class="mobile-svg" width="14" height="1">
       <use href="/js-project-portfolio/assets/icons-40ac62b1.svg#icon-BurgerMenuClosed"></use>
     </svg>
   </button>
   <ul class="mobile-menu-list">
     <li class="mobile-menu-item">
-      <a href="#section-about-me" class="header-link"></a>About me
+      <a href="#section-about-me" class="header-link">About me</a>
     </li>
     <li class="mobile-menu-item">
-      <a href="#section-benefits" class="header-link"></a>Benefits
+      <a href="#section-benefits" class="header-link">Benefits</a>
     </li>
     <li class="mobile-menu-item">
-      <a href="#section-pojects" class="header-link"></a>Projects
+      <a href="#section-pojects" class="header-link">Projects</a>
     </li>
     <li class="mobile-menu-item">
-      <a href="#section-faq" class="header-link"></a>FAQ
+      <a href="#section-faq" class="header-link">FAQ</a>
     </li>
   </ul>
   <div class="box-modal-link">
