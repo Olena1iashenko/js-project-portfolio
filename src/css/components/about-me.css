@@ -54,7 +54,6 @@
 
 @media only screen and (min-width: 1440px) {
   .about-me-picture {
-    /* display: block; */
     width: 100%;
   }
 }
@@ -152,95 +151,99 @@
   }
 }
 
-.about-me-top-icon,
-.about-me-accordion-container .about-me-ac .about-me-ac-trigger::after {
-  content: '';
-  text-align: center;
-
-  transform: translate(0, -60%);
-  position: absolute;
-  right: 10px;
-  top: 60%;
-  border: 1px solid #fafafa33;
-  border-radius: 100px;
-  padding: 10px;
-  color: #fafafa;
-}
-
-.about-me-accordion-container .about-me-ac .about-me-ac-trigger::after {
-  width: 36px;
+.about-me-icon {
   height: 36px;
+  width: 36px;
+  border: 1px solid rgba(250, 250, 250, 0.1);
+  border-radius: 100px;
+  display: block;
+  fill: #fafafa;
+  background: transparent;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
-  .about-me-accordion-container .about-me-ac .about-me-ac-trigger::after {
+  .about-me-icon {
     width: 40px;
     height: 40px;
   }
 }
 
-.about-me-top-icon,
-.about-me-accordion-container
-  .about-me-ac.is-active
-  > .about-me-ac-header
-  .about-me-ac-trigger::after {
-  content: '';
-  position: absolute;
-  right: 10px;
-  top: 60%;
-  stroke: #fafafa;
-}
-
-.about-me-accordion-container .about-me-ac.is-active > .about-me-top-icon {
+.about-me-ac.is-active .about-me-icon {
   transform: rotate(180deg);
+  transition: ease-in 0.3s;
 }
 
 /* Block Swiper */
-.about-me-swiper {
-  /* display: flex; */
-  /* margin: 0 auto; */
+#section-about-me .about-me-swiper {
   margin-top: 96px;
-  max-width: 1312px;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
+  line-height: 1.5;
   letter-spacing: -0.02em;
   color: #fafafa;
+  margin-right: 83px;
+  /* position: relative; */
 }
 
-.about-me-swiper-wrapper {
-  /* display: flex; */
-  min-width: 0;
+@media only screen and (min-width: 768px) {
+  #section-about-me .about-me-swiper {
+    margin-right: 104px;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
 }
 
-.about-me-swiper-slide {
+@media only screen and (min-width: 1440px) {
+  #section-about-me .about-me-swiper {
+    margin-right: 112px;
+    margin-left: 32px;
+  }
+}
+
+#section-about-me .about-me-swiper-slide {
   display: flex;
   padding: 88px 0;
   text-align: center;
-  border-radius: 100%;
+  border-radius: 50%;
   border: 1px solid #fafafa33;
   align-items: center;
   justify-content: center;
+  width: 130px;
+  height: 130px;
+}
+
+@media only screen and (min-width: 768px) {
+  #section-about-me .about-me-swiper-slide {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .about-me-swiper-button-next {
-  /* background: none; */
+  background: blue;
   display: flex;
   border: none;
   width: 48px;
   height: 48px;
-  border-radius: 50%;
-  border: 1px solid rgba(250, 250, 250, 0.2);
-  background: none;
   justify-content: center;
+  /* position: absolute; */
+  /* right: 0; */
+}
+
+.about-me-swiper-button-next::after {
+  /* display: none; */
 }
 
 .about-me-arrow-icon {
   box-sizing: border-box;
-  color: #fafafa;
+  fill: #fafafa;
   width: 40px;
   height: 40px;
+  position: absolute;
 }
 
-.about-me-swiper-button-next .swiper-button-next:after {
-  content: 'none';
+.about-me-swiper .swiper-slide-active {
+  background: #ed3b44;
 }
