@@ -232,10 +232,6 @@
   /* right: 0; */
 }
 
-.about-me-swiper-button-next::after {
-  /* display: none; */
-}
-
 .about-me-arrow-icon {
   box-sizing: border-box;
   fill: #fafafa;
