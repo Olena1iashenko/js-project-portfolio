@@ -1,6 +1,8 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
+document.addEventListener('DOMContentLoaded', fetchReviews);
+
 function fetchReviews() {
   fetch('https://portfolio-js.b.goit.study/api/reviews')
     .then(response => {
@@ -18,8 +20,12 @@ function fetchReviews() {
     .catch(error => {
       console.error(error);
     });
+  swiper();
+}
 
-  const swiper = new Swiper('.reviews-swiper', {
+// создание слайдера с помощью библиотеки
+function swiper() {
+  new Swiper('.reviews-swiper', {
     // Optional parameters обязательніе
     loop: false,
     slidesPerView: 4,
@@ -48,6 +54,7 @@ function fetchReviews() {
   });
 }
 
+// функция создания карточек
 function createDisplayReviews(reviews) {
   const reviewsList = document.querySelector('.reviews-list');
   reviewsList.innerHTML = ''; // убираю данніе с html
@@ -63,5 +70,3 @@ function createDisplayReviews(reviews) {
     )
     .join('');
 }
-
-fetchReviews();
