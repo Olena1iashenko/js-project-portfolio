@@ -27,9 +27,11 @@
   <path d="M26.6667 16H5.33342" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
   <path d="M13.3333 24L5.33325 16L13.3333 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 </symbol>
-<symbol id="icon-arrow-bot" width="12" height="8" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 1.5L6 6.5L1 1.5" stroke="#FAFAFA" stroke-width="2"/>
+<symbol id="icon-arrow-top" viewBox="0 0 32 32">
+<path stroke-width="3.2" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M24 20l-8-8-8 8"></path>
 </symbol>
+<symbol id="icon-arrow-bot" viewBox="0 0 32 32">
+<path stroke-width="3.2" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M24 12l-8 8-8-8"></path>
 <symbol id="icon-x" viewBox="0 0 24 24" fill="none">
 <path d="M18 6L6 18" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M6 6L18 18" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
