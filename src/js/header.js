@@ -15,25 +15,21 @@ const closeModalBtn = document.querySelector('.close-modal');
 const mobileModal = document.querySelector('.mobile-modal-menu');
 const mobileMenu = document.querySelector('.mobile-menu-list');
 const mobileMenuItems = document.querySelector('.mobile-menu-item');
-const body = document.body;
 
 openModalBtn.addEventListener('click', onOpenModal);
 
 function onOpenModal() {
   mobileModal.classList.toggle('hidden');
-  body.classList.toggle('overlay');
 }
 
 closeModalBtn.addEventListener('click', onClosedModal);
 
 function onClosedModal() {
   mobileModal.classList.toggle('hidden');
-  body.classList.toggle('overlay');
 }
 
 mobileMenu.addEventListener('click', onMobileItemsClick);
 
 function onMobileItemsClick() {
   mobileModal.classList.toggle('hidden');
-  body.classList.toggle('overlay');
 }

@@ -17,23 +17,17 @@ new Swiper('.projects-swiper', {
   },
   // breakpoints: {
   //   320: {
-  //     // direction: 'vertical',
   //     height: 288,
   //   },
   //   375: {
-  //     // direction: 'vertical',
   //     height: 343,
   //   },
   //   768: {
-  //     // direction: 'vertical',
   //     height: 625,
   //   },
   //   1440: {
-  //     // direction: 'horizontal',
   //   },
   // },
-
-  // ...
 });
 
 // swiper.allowSlideNext;
