@@ -64,7 +64,7 @@ function createDisplayReviews(reviews) {
       review =>
         `<li class="reviews-item swiper-slide">
         <img src="${review.avatar_url}" alt="${review.author}" class="reviews-img" width="48" height="48">
-        <h5 class="reviews-h">${review.author}</h5>
+        <h2 class="reviews-h">${review.author}</h2>
         <p class="reviews-p">${review.review}</p>
     </li>`
     )
