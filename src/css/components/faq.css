@@ -378,6 +378,13 @@ p.ac-text {
     margin: 0;
   
   }
+
+  .faq-list .faq-item .ac-comment .faq-paragraph {
+    
+    padding: 26px 0 20px;
+    text-align: left;
+  }
+
   .accordion-container .ac .faq-item {
     border: none;
     padding-bottom: 32px;
