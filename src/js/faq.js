@@ -1,9 +1,7 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
-console.log(Accordion);
-
- new Accordion('.faq-list');
+ new Accordion('.faq-list', {showMultiple: true,});
 
 // const container = document.querySelector('.accordion-container');
 // console.log(container);

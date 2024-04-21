@@ -4,8 +4,6 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-console.dir(Swiper);
-
 new Swiper('.projects-swiper', {
   // Install modules
   modules: [Navigation],

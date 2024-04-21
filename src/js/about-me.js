@@ -11,7 +11,6 @@ const container = document.querySelector('.about-me-accordion-container');
 const accordion = new Accordion(container, {
     openOnInit: [0],
     showMultiple: true,
-    onOpen: (currEl) => console.log('Open!', currEl)
 });
 
 // Swiper
