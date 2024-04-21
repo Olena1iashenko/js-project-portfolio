@@ -39,6 +39,7 @@
     </picture>
 
     <form class="footer-form">
+      <label class="input-message" id="email-message"></label>
       <input
         class="footer-form-input email-input input-correct"
         type="text"
@@ -50,7 +51,7 @@
         pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
         title="Please enter your email"
       />
-      <span class="input-message" id="email-message"></span>
+      <label class="input-message" id="comment-message"></label>
       <input
         class="footer-form-comment comment-input input-correct"
         name="user-comment"
@@ -59,7 +60,7 @@
         required
         minlength="10"
       />
-      <span class="input-message" id="comment-message"></span>
+
       <button class="footer-btn" type="submit">Send</button>
     </form>
     <address class="footer-address">
