@@ -1,20 +1,35 @@
 // Menu
+const openMenu = document.querySelector('.header-menu-nav');
+const boxItemsEl = document.querySelector('.menu-item-box');
+const itemsEl = document.querySelector('.menu-item');
 
-const openMenu = document.querySelector('open-menu');
+openMenu.addEventListener('click', onClosedMenu);
 
-openMenu.addEventListener('click', openModal);
-
-function openModal(event) {
-  event.classList.toggle('hidden');
+function onClosedMenu() {
+  boxItemsEl.classList.toggle('hidden');
 }
 
 // Modal
 const openModalBtn = document.querySelector('.open-modal');
-const closeModaBtn = document.querySelector('.close-moda');
+const closeModalBtn = document.querySelector('.close-modal');
+const mobileModal = document.querySelector('.mobile-modal-menu');
+const mobileMenu = document.querySelector('.mobile-menu-list');
+const mobileMenuItems = document.querySelector('.mobile-menu-item');
 
-openModalBtn.addEventListener('click', openModal);
-// closeModaBtn.addEventListener('click', closeModal);
+openModalBtn.addEventListener('click', onOpenModal);
 
-// function openModal(event) {
-//   event.classList.toggle('hidden');
-// }
+function onOpenModal() {
+  mobileModal.classList.toggle('hidden');
+}
+
+closeModalBtn.addEventListener('click', onClosedModal);
+
+function onClosedModal() {
+  mobileModal.classList.toggle('hidden');
+}
+
+mobileMenu.addEventListener('click', onMobileItemsClick);
+
+function onMobileItemsClick() {
+  mobileModal.classList.toggle('hidden');
+}
