@@ -87,12 +87,12 @@
   }
 }
 
-/* .reviews-arrow-icon{
+.reviews-arrow-icon{
 
   stroke: #FAFAFA;
 }
- */
 
-.swiper-button-disabled .reviews-arrow-icon {
+
+.swiper-button-disabled .reviews-arrow-icon{
   stroke: #3b3b3b;
 }
