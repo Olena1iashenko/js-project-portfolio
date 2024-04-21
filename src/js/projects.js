@@ -14,26 +14,24 @@ new Swiper('.projects-swiper', {
   navigation: {
     prevEl: '.js-btn_arrow-left',
     nextEl: '.js-btn_arrow-right',
-    // allowSlidePrev: true,
-    // allowSlideNext: true,
   },
-  breakpoints: {
-    320: {
-      // direction: 'vertical',
-      height: 288,
-    },
-    375: {
-      // direction: 'vertical',
-      height: 343,
-    },
-    768: {
-      // direction: 'vertical',
-      height: 625,
-    },
-    1440: {
-     direction: 'horizontal',
-    }
-  }
+  // breakpoints: {
+  //   320: {
+  //     // direction: 'vertical',
+  //     height: 288,
+  //   },
+  //   375: {
+  //     // direction: 'vertical',
+  //     height: 343,
+  //   },
+  //   768: {
+  //     // direction: 'vertical',
+  //     height: 625,
+  //   },
+  //   1440: {
+  //     // direction: 'horizontal',
+  //   },
+  // },
 
   // ...
 });
