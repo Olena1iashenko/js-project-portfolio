@@ -288,7 +288,7 @@
   letter-spacing: -0.02em;
   color: #e74a3b;
   display: none;
-  margin-bottom: 4px;
+  position: absolute;
 }
 
 .input-success {

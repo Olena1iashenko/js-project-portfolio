@@ -247,7 +247,7 @@ function handleSuccess(input, message) {
   message.classList.remove('input-error');
   message.classList.add('input-success');
   message.textContent = 'Success!';
-  message.style.display = 'inline';
+  message.style.display = 'block';
 }
 
 
@@ -256,7 +256,7 @@ function handleFailure(input, message) {
   message.classList.remove('input-success');
   message.classList.add('input-error');
   message.textContent = 'Please, try again!';
-  message.style.display = 'inline';
+  message.style.display = 'block';
 }
 
 function afterFillSuccess(input, message) {
