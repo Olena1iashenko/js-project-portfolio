@@ -1,94 +1,18 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     const emailInput = document.querySelector('.footer-form-input');
-//     const commentInput = document.querySelector('.footer-form-message');
 
-//     emailInput.addEventListener('input', function() {
-//         let maxLength = parseInt(emailInput.getAttribute("maxlength"));
-//         if (emailInput.value.length > maxLength) {
-//             emailInput.value = emailInput.value.substring(0, maxLength);
-//         }
-//     });
-
-//     const form = document.querySelector('.footer-form');
-//     form.addEventListener("submit", onSubmit);
-
-//     function onSubmit(event) {
-//         event.preventDefault();
-
-//         const minLength = parseInt(commentInput.getAttribute("minlength"));
-//         if (commentInput.value.length < minLength) {
-//             alert(`Comment must be at least ${minLength} characters long`);
-//             return;
-//         }
-
-//         const formData = new FormData(event.target);
-//         const formDataObject = {};
-//         formData.forEach((value, key) => {
-//             formDataObject[key] = value;
-//         });
-
-//         fetch("https://portfolio-js.b.goit.study/api/requests", {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify(formDataObject)
-//         })
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error("Network response was not ok");
-//             }
-//             return response.json();
-//         })
-//         .then(data => {
-//             form.reset();
-//             showModal("Thank you for your interest in cooperation!");
-//         })
-//         .catch(error => {
-//             alert("Error: We're sorry, something went wrong on our end. Please try again later or contact our support team");
-//         });
-//     }
-
-//     function showModal(message) {
-//         const modal = document.querySelector(".modal");
-//         const closeButton = document.querySelector(".modal-button");
-//         const backdrop = document.querySelector(".backdrop");
-
-//         document.querySelector(".modal-caption").textContent = message;
-//         document.querySelector(".modal-text").textContent = message;
-
-//         modal.style.display = "block";
-
-//         closeButton.addEventListener("click", closeModal);
-//         backdrop.addEventListener("click", closeModal);
-//         document.addEventListener("keydown", function(event) {
-//             if (event.key === "Escape") {
-//                 closeModal();
-//             }
-//         });
-//     }
-
-//     function closeModal() {
-//         const modal = document.querySelector(".modal");
-//         modal.style.display = "none";
-//     }
-// });
-
-
-// Import
 import axios from 'axios';
 import iziToast from 'izitoast';
 import errorIcon from '../img/icons.svg#icon-x';
 
-// Refs
+//refs
 const formData = document.querySelector('.footer-form');
-const emailInput = document.querySelector('.footer-form-input');
-const commentInput = document.querySelector('.footer-form-message');
-const message = document.querySelector('.input-email-text');
+const emailInput = document.querySelector('#user-email');
+const emailMessage = document.querySelector('#email-message');
+const commentInput = document.querySelector('#user-comment');
+const commentMessage = document.querySelector('#comment-message');
 const backdrop = document.querySelector('.backdrop');
 const modalWindow = document.querySelector('.modal');
 const closeModalBtn = document.querySelector('.modal-btn');
-const clickSubmitBtn = document.querySelector('.footer-btn'); 
+const clickSubmitBtn = document.querySelector('.footer-btn');
 
 
 function validateEmail(email) {
@@ -97,12 +21,11 @@ function validateEmail(email) {
   return validRegex.test(email);
 }
 
-
 function validateComment(comment) {
-  return comment.length >= 10; 
+  return comment.length >= 10;
 }
 
-// IziToast function
+
 function showMessage(icon, message, bgColor) {
   iziToast.show({
     iconUrl: icon,
@@ -131,31 +54,31 @@ async function userForm(userData) {
 }
 
 
-function handleSuccess() {
-  emailInput.classList.add('input-correct');
-  message.classList.add('correct-text');
+function handleSuccess(input, message) {
+  input.classList.add('input-correct');
+  message.classList.remove('input-error');
+  message.classList.add('input-success');
   message.textContent = 'Success!';
 }
 
 
-function handleFailure() {
-  message.classList.add('incorrect-text');
-  message.textContent = 'Invalid email, try again';
-  emailInput.classList.add('input-incorrect');
+function handleFailure(input, message) {
+  input.classList.add('input-incorrect');
+  message.classList.remove('input-success');
+  message.classList.add('input-error');
+  message.textContent = 'Please, try again!';
 }
 
-//  fill functions
-function afterFillSuccess() {
+
+function afterFillSuccess(message) {
   message.classList.remove('correct-text');
-  emailInput.classList.remove('input-correct');
 }
 
-function afterFillFailure() {
+function afterFillFailure(message) {
   message.classList.remove('incorrect-text');
-  emailInput.classList.remove('input-incorrect');
 }
 
-//  modal functions
+
 function handleCloseModal() {
   document.body.classList.remove('backdrop-after');
   backdrop.classList.remove('backdrop-is-open');
@@ -164,7 +87,7 @@ function handleCloseModal() {
 
 
 function handleOpenModal() {
-   document.body.classList.add('backdrop-after');
+  document.body.classList.add('backdrop-after');
   backdrop.classList.add('backdrop-is-open');
   modalWindow.classList.add('modal-is-open');
 }
@@ -181,6 +104,7 @@ function closeModal(event) {
   }
 }
 
+
 function onEscClose(event) {
   if (event.key === 'Escape') {
     handleCloseModal();
@@ -188,11 +112,14 @@ function onEscClose(event) {
   }
 }
 
+
 function onSubmitButton() {
-  if (!validateEmail(clickSubmitBtn.form.elements.email.value.trim())) {
-    message.handleFailure();
+  const email = emailInput.value.trim();
+
+  if (!validateEmail(email)) {
+    handleFailure(emailInput, emailMessage); 
   }
-};
+}
 
 async function onSubmit(event) {
   event.preventDefault();
@@ -214,15 +141,18 @@ async function onSubmit(event) {
       throw new Error('Comment must be at least 10 characters long');
     }
 
-  
+    
     const response = await userForm({ email, comment });
     formData.reset();
-    handleSuccess();
+
+    
     handleOpenModal();
+
+    
     document.body.addEventListener('click', closeModal);
     window.addEventListener('keydown', onEscClose);
   } catch (error) {
-  
+   
     showMessage(errorIcon, error.message, '#e74a3b');
   }
 }
@@ -236,21 +166,16 @@ function handleInputCheck() {
   }
 
   if (validateEmail(email)) {
-    handleSuccess();
-    setTimeout(afterFillSuccess, 2000);
+    handleSuccess(emailInput, emailMessage);
+    setTimeout(() => afterFillSuccess(emailMessage), 2000);
   } else {
-    handleFailure();
-    setTimeout(afterFillFailure, 2000);
+    handleFailure(emailInput, emailMessage);
+    setTimeout(() => afterFillFailure(emailMessage), 2000);
   }
 }
 
-// event listener 
+
 formData.addEventListener('submit', onSubmit);
-
-
-clickSubmitBtn.addEventListener('submit', onSubmitButton);
-
-
+clickSubmitBtn.addEventListener('click', onSubmitButton);
 emailInput.addEventListener('input', handleInputCheck);
-
 commentInput.addEventListener('input', handleInputCheck);

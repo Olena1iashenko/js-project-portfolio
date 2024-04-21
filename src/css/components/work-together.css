@@ -226,30 +226,26 @@
 
 .input-email-text {
   opacity: 0;
-  font-family: var(--font-family);
+  font-family: 'Inter Tight', sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.02em;
 }
-.input-correct {
-  border-bottom: #3cbc81;
-}
-.correct-text {
-  color: #3cbc81;
-}
-.input-incorrect {
-  border-bottom: #e74a3b;
-}
-.incorrect-text {
-  color: #e74a3b;
+.input-email-text {
+  opacity: 0;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
 }
 
-.footer-form-message {
+.footer-form-comment {
   margin-bottom: 16px;
 }
 
-.footer-form-message {
+.footer-form-comment {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -271,17 +267,42 @@
   }
 }
 @media only screen and (min-width: 768px) {
-  .footer-form-message {
+  .footer-form-comment {
     margin-bottom: 0px;
     width: 245px;
   }
 }
-.footer-form-message:hover,
-.footer-form-message:focus {
+.footer-form-comment:hover,
+.footer-form-comment:focus {
   color: #fafafa;
   border-color: #fafafa;
 }
 
+.input-message {
+  opacity: 0;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: #e74a3b;
+}
+
+.input-success {
+  color: #3cbc81;
+}
+
+.input-error {
+  color: #e74a3b;
+}
+
+.input-correct {
+  border-bottom: 2px solid #3cbc81;
+}
+
+.input-incorrect {
+  border-bottom: 2px solid #e74a3b;
+}
 .footer-btn {
   display: flex;
   justify-content: center;
@@ -350,6 +371,13 @@
     display: flex;
     flex-direction: row;
   }
+}
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 .footer-address-link {
