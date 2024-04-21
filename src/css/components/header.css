@@ -27,9 +27,7 @@
 .header-container {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
   margin: 0 auto;
 }
 
@@ -55,11 +53,16 @@
   color: #fafafa;
 }
 
+.header-menu {
+  display: flex;
+  flex-direction: column;
+}
+
 .header-menu-nav {
   display: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 376px) {
   .header-menu-nav {
     display: block;
     text-align: center;
@@ -72,9 +75,9 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 376px) {
   .menu-item-box {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -110,6 +113,16 @@
   display: none;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* Затемнений колір фону */
+  z-index: 999;
+}
+
 .header-burger-btn {
   position: absolute;
   top: 0;
@@ -126,7 +139,7 @@
   justify-content: space-between;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 376px) {
   .header-burger-btn {
     display: none;
   }
@@ -136,7 +149,7 @@
   display: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 376px) {
   .link-order {
     display: inline-block;
     font-weight: 500;
