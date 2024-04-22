@@ -126,7 +126,6 @@
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #ed3b44;
-  margin-bottom: 63px;
   font-family: 'Inter Tight', sans-serif;
 }
 @media only screen and (min-width: 768px) {
@@ -139,10 +138,11 @@
 }
 .footer-title-bottom {
   margin-bottom: 63px;
+  display: block;
 }
 @media only screen and (min-width: 768px) {
   .footer-title-bottom {
-    margin-bottom: 18px;
+    margin-bottom: 64px;
   }
 }
 .footer-title-top {
@@ -162,18 +162,18 @@
     margin-bottom: 10px;
   }
 }
+
 .footer-form {
   display: flex;
   flex-direction: column;
   width: 343px;
-  margin-bottom: 16px;
 }
 
 @media only screen and (min-width: 768px) {
   .footer-form {
     width: 704px;
     flex-direction: row;
-    margin-bottom: 26px;
+    margin-bottom: 78px;
     gap: 32px;
     align-items: baseline;
   }
@@ -182,8 +182,7 @@
 @media only screen and (min-width: 1440px) {
   .footer-form {
     width: 1048px;
-    margin-bottom: 78px;
-    margin-left: 196px;
+    gap: 0;
   }
 }
 
@@ -218,15 +217,6 @@
 .footer-form-comment {
   width: 100%;
 }
-@media only screen and (min-width: 1440px) {
-  .footer-form-input {
-    width: 390px;
-  }
-  .footer-form-comment {
-    width: 390px;
-  }
-}
-
 @media only screen and (min-width: 768px) {
   .footer-form-input {
     width: 245px;
@@ -235,6 +225,18 @@
   .footer-form-comment {
     width: 245px;
     margin-bottom: 0px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .footer-form-input {
+    width: 390px;
+    margin-bottom: 78px;
+    margin-right: 32px;
+  }
+  .footer-form-comment {
+    width: 390px;
+    margin-bottom: 78px;
+    margin-right: 54px;
   }
 }
 
@@ -318,11 +320,17 @@
     height: 150px;
     border-radius: 100%;
     margin-bottom: 0;
+    position: absolute;
+    right: 25px;
+    top: 141px;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1440px) {
   .footer-btn {
     height: 150px;
+    position: absolute;
+    right: 25px;
+    top: 140px;
   }
 }
 .footer-address {
@@ -335,11 +343,12 @@
     display: flex;
     gap: 8px;
     width: 418px;
+    margin-bottom: 137px;
   }
 }
 @media only screen and (min-width: 1440px) {
   .footer-address {
-    margin-left: 196px;
+    margin-bottom: 169px;
   }
 }
 
@@ -402,7 +411,6 @@
 
 /* Modal form */
 .backdrop {
-  z-index: 999;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -420,11 +428,11 @@
 .backdrop-after {
   overflow: hidden;
 }
-.loading {
+/* .loading {
   cursor: wait;
   opacity: 0.7;
   pointer-events: none;
-}
+} */
 .backdrop-is-open {
   opacity: 1;
   visibility: visible;

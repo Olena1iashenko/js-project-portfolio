@@ -12,26 +12,65 @@ const modalWindow = document.querySelector('.modal');
 const closeModalBtn = document.querySelector('.modal-btn');
 const clickSubmitBtn = document.querySelector('.footer-btn');
 
-const MAX_INPUT_LENGTH = 50;
+
 
 function validateEmail(email) {
-  const pattern = emailInput.getAttribute('pattern');
+  const pattern = /^\w+(\.\w+)?@[a-zA-Z_\-]+?\.[a-zA-Z]{2,3}$/;
   const validRegex = new RegExp(pattern);
   return validRegex.test(email);
 }
+// function validateEmail(emailInput) {
+//   const pattern = /^\w+(\.\w+)?@[a-zA-Z_\-]+?\.[a-zA-Z]{2,3}$/;
+//   const validRegex = new RegExp(pattern);
+//   return validRegex.test(emailInput);
+// }
+
+// const emailInputValue = document.getElementById('user-email').value.trim();
+// const isValidEmail = validateEmail(emailInputValue);
+
+// if (isValidEmail) {
+//   console.log('Email is valid!');
+// } else {
+//   console.log('Email is not valid!');
+// }
 
 function validateComment(comment) {
   return comment.length >= 10;
 }
 
-
-commentInput.addEventListener('input', function(event) {
-  const inputText = event.target.value;
-  if (inputText.length > MAX_INPUT_LENGTH) {
-    const trimmedText = inputText.substring(0, MAX_INPUT_LENGTH);
-    event.target.value = trimmedText + '...';
+function handleEmailInput(event) {
+  const userData = event.target.value.trim();
+  const width = window.innerWidth;
+  if (userData.length > 27 && width <= 375) {
+    event.target.value = userData.slice(0, 25) + '...';
   }
-});
+  if (userData.length > 19 && width > 375 && width < 768) {
+    event.target.value = userData.slice(0, 17) + '...';
+  }
+  if (userData.length > 31 && width >= 768 && width < 1440) {
+    event.target.value = userData.slice(0, 29) + '...';
+  }
+  if (userData.length > 44 && width >= 1440) {
+    event.target.value = userData.slice(0, 42) + '...';
+  }
+}
+
+function handleCommentsInput(event) {
+  const userData = event.target.value.trim();
+  const width = window.innerWidth;
+  if (userData.length > 27 && width <= 375) {
+    event.target.value = userData.slice(0, 25) + '...';
+  }
+  if (userData.length > 19 && width > 375 && width < 768) {
+    event.target.value = userData.slice(0, 17) + '...';
+  }
+  if (userData.length > 31 && width >= 768 && width < 1440) {
+    event.target.value = userData.slice(0, 29) + '...';
+  }
+  if (userData.length > 45 && width >= 1440) {
+    event.target.value = userData.slice(0, 43) + '...';
+  }
+}
 
 function showMessage(icon, message, bgColor) {
   iziToast.show({
@@ -171,32 +210,49 @@ async function onSubmit(event) {
   }
 }
 
+// function handleInputCheck() {
+//   const email = emailInput.value.trim();
+//   const comment = commentInput.value.trim();
+
+//   if (email === '' || comment === '') {
+//     return;
+//   }
+
+//   if (validateEmail(email)) {
+//     handleSuccess();
+//     setTimeout(afterFillSuccess, 2000);
+//   } else {
+//     handleFailure();
+//     setTimeout(afterFillFailure, 2000);
+//    }
+
+//    if (validateComment(comment)) {
+//      handleSuccess();
+//     setTimeout(afterFillSuccess, 2000);
+//    } else {
+//      handleFailure();
+//      setTimeout(afterFillFailure, 2000);
+//   }
+//  }
 function handleInputCheck() {
-  const email = emailInput.value.trim();
-  const comment = commentInput.value.trim();
+   const email = emailInput.value.trim();
 
-  if (email === '' || comment === '') {
-    return;
+   if (email === '') {
+     return;
   }
 
-  if (validateEmail(email)) {
-    handleSuccess();
-    setTimeout(afterFillSuccess, 2000);
-  } else {
-    handleFailure();
-    setTimeout(afterFillFailure, 2000);
+   if (validateEmail(email)) {
+     handleSuccess(emailInput);
+     setTimeout(() => afterFillSuccess(emailInput), 2000);
+   } else {
+    handleFailure(emailInput);
+     setTimeout(() => afterFillFailure(emailInput), 2000);
   }
-
-  if (validateComment(comment)) {
-    handleSuccess();
-    setTimeout(afterFillSuccess, 2000);
-  } else {
-    handleFailure();
-    setTimeout(afterFillFailure, 2000);
-  }
-}
+ }
 
 formData.addEventListener('submit', onSubmit);
 clickSubmitBtn.addEventListener('click', onSubmitButton);
 emailInput.addEventListener('input', handleInputCheck);
 commentInput.addEventListener('input', handleInputCheck);
+emailInput.addEventListener('input', handleEmailInput);
+commentInput.addEventListener('input', handleCommentsInput);
