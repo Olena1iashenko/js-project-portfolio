@@ -8,7 +8,7 @@ new Swiper('.projects-swiper', {
   // Install modules
   modules: [Navigation],
   slidesPerView: 1,
-  speed: 500,
+  // speed: 500,
   slideClass: 'projects-swiper-slide',
   navigation: {
     prevEl: '.js-btn_arrow-left',
