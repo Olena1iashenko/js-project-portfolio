@@ -186,10 +186,6 @@
 }
 
 .projects-arrow-icon {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-
   stroke: #fafafa;
   fill: none;
 }
@@ -198,7 +194,8 @@
   /* fill: red; */
 }
 
-.swiper-button-disabled {
+.projects-arrow-wrapper .swiper-button-disabled {
+  /* border: 1px solid rgba(250, 250, 250, 0.2); */
   border: 1px solid rgba(250, 250, 250, 0.2);
 }
 
