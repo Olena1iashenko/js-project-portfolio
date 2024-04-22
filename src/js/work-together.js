@@ -1,206 +1,18 @@
-
-// import axios from 'axios';
-// import iziToast from 'izitoast';
-// import errorIcon from '../img/icons.svg#icon-x';
-
-// //refs
-// const formData = document.querySelector('.footer-form');
-// const emailInput = document.querySelector('#user-email');
-// const emailMessage = document.querySelector('#email-message');
-// const commentInput = document.querySelector('#user-comment');
-// const commentMessage = document.querySelector('#comment-message');
-// const backdrop = document.querySelector('.backdrop');
-// const modalWindow = document.querySelector('.modal');
-// const closeModalBtn = document.querySelector('.modal-btn');
-// const clickSubmitBtn = document.querySelector('.footer-btn');
-
-
-// function validateEmail(email) {
-//   const pattern = emailInput.getAttribute('pattern');
-//   const validRegex = new RegExp(pattern);
-//   return validRegex.test(email);
-// }
-
-// function validateComment(comment) {
-//   return comment.length >= 10;
-// }
-
-
-// function showMessage(icon, message, bgColor) {
-//   iziToast.show({
-//     iconUrl: icon,
-//     titleColor: 'White',
-//     titleSize: '24px',
-//     message: message,
-//     messageColor: 'White',
-//     messageSize: '16px',
-//     backgroundColor: bgColor,
-//     position: 'topRight',
-//     timeout: 3000,
-//   });
-// }
-
-// // Axios async function
-// axios.defaults.baseURL = 'https://portfolio-js.b.goit.study/api';
-
-// async function userForm(userData) {
-//   const body = {
-//     email: userData.email,
-//     comment: userData.comment
-//   };
-//   const ENDPOINT = '/requests';
-
-//   return axios.post(ENDPOINT, body);
-// }
-
-
-// function handleSuccess(input, message) {
-//   input.classList.add('input-correct');
-//   message.classList.remove('input-error');
-//   message.classList.add('input-success');
-//   message.textContent = 'Success!';
-//    input.parentNode.insertBefore(message, input.nextSibling);
-// }
-
-
-// function handleFailure(input, message) {
-//   input.classList.add('input-incorrect');
-//   message.classList.remove('input-success');
-//   message.classList.add('input-error');
-//   message.textContent = 'Please, try again!';
-//    input.parentNode.insertBefore(message, input.nextSibling);
-// }
-
-
-// function afterFillSuccess(input, message) {
-//   input.classList.remove('input-incorrect', 'input-correct');
-//   message.classList.remove('input-error', 'input-success');
-// }
-
-// function afterFillFailure(input, message) {
-//   input.classList.remove('input-incorrect', 'input-correct');
-//   message.classList.remove('input-error', 'input-success');
-// }
-
-
-// function handleCloseModal() {
-//   document.body.classList.remove('backdrop-after');
-//   backdrop.classList.remove('backdrop-is-open');
-//   modalWindow.classList.remove('modal-is-open');
-// }
-
-
-// function handleOpenModal() {
-//   document.body.classList.add('backdrop-after');
-//   backdrop.classList.add('backdrop-is-open');
-//   modalWindow.classList.add('modal-is-open');
-// }
-
-
-// function closeModal(event) {
-//   if (
-//     event.target.classList.contains('backdrop') ||
-//     event.target.nodeName === 'svg' ||
-//     event.target.nodeName === 'BUTTON'
-//   ) {
-//     handleCloseModal();
-//     closeModalBtn.removeEventListener('click', closeModal);
-//   }
-// }
-
-
-// function onEscClose(event) {
-//   if (event.key === 'Escape') {
-//     handleCloseModal();
-//     document.removeEventListener('keydown', onEscClose);
-//   }
-// }
-
-
-// function onSubmitButton() {
-//   const email = emailInput.value.trim();
-// const comment = commentInput.value.trim();
-//   if (!validateEmail(email)) {
-//     handleFailure(emailInput, emailMessage);
-//   }
-//    if (!validateComment(comment)) {
-//     handleFailure(commentInput, commentMessage);
-//   }
-// }
-
-// async function onSubmit(event) {
-//   event.preventDefault();
-
-//   try {
-//     const email = emailInput.value.trim();
-//     const comment = commentInput.value.trim();
-
-//     if (email === '' || comment === '') {
-//       showMessage(errorIcon, 'Both fields are required. Please provide your email and comment before sending.', '#e74a3b');
-//       return;
-//     }
-
-//     if (!validateEmail(email)) {
-//       throw new Error('Invalid email format');
-//     }
-
-//     if (!validateComment(comment)) {
-//       throw new Error('Comment must be at least 10 characters long');
-//     }
-
-    
-//     const response = await userForm({ email, comment });
-//     formData.reset();
-
-    
-//     handleOpenModal();
-
-    
-//     document.body.addEventListener('click', closeModal);
-//     window.addEventListener('keydown', onEscClose);
-//   } catch (error) {
-   
-//     showMessage(errorIcon, error.message, '#e74a3b');
-//   }
-// }
-
-
-// function handleInputCheck() {
-//   const email = emailInput.value.trim();
-
-//   if (email === '') {
-//     return;
-//   }
-
-//   if (validateEmail(email)) {
-//     handleSuccess(emailInput, emailMessage);
-//     setTimeout(() => afterFillSuccess(emailMessage), 2000);
-//   } else {
-//     handleFailure(emailInput, emailMessage);
-//     setTimeout(() => afterFillFailure(emailMessage), 2000);
-//   }
-// }
-
-
-// formData.addEventListener('submit', onSubmit);
-// clickSubmitBtn.addEventListener('click', onSubmitButton);
-// emailInput.addEventListener('input', handleInputCheck);
-// commentInput.addEventListener('input', handleInputCheck);
 import axios from 'axios';
 import iziToast from 'izitoast';
 import errorIcon from '../img/icons.svg#icon-x';
 
-// Refs
-
 const formData = document.querySelector('.footer-form');
 const emailInput = document.querySelector('#user-email');
-const emailMessage = document.querySelector('#email-message');
+const successMessage = document.querySelector('.input-success');
 const commentInput = document.querySelector('#user-comment');
-const commentMessage = document.querySelector('#comment-message');
+const errorMessage = document.querySelector('.input-error');
 const backdrop = document.querySelector('.backdrop');
 const modalWindow = document.querySelector('.modal');
 const closeModalBtn = document.querySelector('.modal-btn');
 const clickSubmitBtn = document.querySelector('.footer-btn');
+
+const MAX_INPUT_LENGTH = 50;
 
 function validateEmail(email) {
   const pattern = emailInput.getAttribute('pattern');
@@ -208,12 +20,19 @@ function validateEmail(email) {
   return validRegex.test(email);
 }
 
-
 function validateComment(comment) {
   return comment.length >= 10;
 }
 
-// Izitoast
+
+commentInput.addEventListener('input', function(event) {
+  const inputText = event.target.value;
+  if (inputText.length > MAX_INPUT_LENGTH) {
+    const trimmedText = inputText.substring(0, MAX_INPUT_LENGTH);
+    event.target.value = trimmedText + '...';
+  }
+});
+
 function showMessage(icon, message, bgColor) {
   iziToast.show({
     iconUrl: icon,
@@ -228,7 +47,6 @@ function showMessage(icon, message, bgColor) {
   });
 }
 
-// Axios async function
 axios.defaults.baseURL = 'https://portfolio-js.b.goit.study/api';
 
 async function userForm(userData) {
@@ -241,34 +59,41 @@ async function userForm(userData) {
   return axios.post(ENDPOINT, body);
 }
 
+function handleSuccess() {
+  emailInput.classList.add('input-correct');
+  emailInput.classList.remove('input-incorrect');
 
-function handleSuccess(input, message) {
-  input.classList.add('input-correct');
-  message.classList.remove('input-error');
-  message.classList.add('input-success');
-  message.textContent = 'Success!';
-  message.style.display = 'block';
+  successMessage.classList.remove('visually-hidden');
+  errorMessage.classList.add('visually-hidden');
+  successMessage.style.display = 'block';
+  errorMessage.style.display = 'none';
 }
 
-
-function handleFailure(input, message) {
-  input.classList.add('input-incorrect');
-  message.classList.remove('input-success');
-  message.classList.add('input-error');
-  message.textContent = 'Please, try again!';
-  message.style.display = 'block';
+function handleFailure() {
+  emailInput.classList.remove('input-correct');
+  emailInput.classList.add('input-incorrect');
+  successMessage.classList.add('visually-hidden');
+  errorMessage.classList.remove('visually-hidden');
+  successMessage.style.display = 'none';
+  errorMessage.style.display = 'block';
 }
 
-function afterFillSuccess(input, message) {
-  input.classList.remove('input-incorrect', 'input-correct');
-  message.classList.remove('input-error', 'input-success');
-  message.style.display = 'none'; 
+function afterFillSuccess() {
+  emailInput.classList.remove('input-incorrect');
+  emailInput.classList.add('input-correct');
+  successMessage.classList.add('visually-hidden');
+  errorMessage.classList.add('visually-hidden');
+  successMessage.style.display = 'none';
+  errorMessage.style.display = 'none';
 }
 
-function afterFillFailure(input, message) {
-  input.classList.remove('input-incorrect', 'input-correct');
-  message.classList.remove('input-error', 'input-success');
-  message.style.display = 'none'; 
+function afterFillFailure() {
+  emailInput.classList.remove('input-correct');
+  emailInput.classList.add('input-incorrect');
+  successMessage.classList.add('visually-hidden');
+  errorMessage.classList.add('visually-hidden');
+  successMessage.style.display = 'none';
+  errorMessage.style.display = 'none';
 }
 
 function handleCloseModal() {
@@ -277,13 +102,11 @@ function handleCloseModal() {
   modalWindow.classList.remove('modal-is-open');
 }
 
-
 function handleOpenModal() {
   document.body.classList.add('backdrop-after');
   backdrop.classList.add('backdrop-is-open');
   modalWindow.classList.add('modal-is-open');
 }
-
 
 function closeModal(event) {
   if (
@@ -303,20 +126,18 @@ function onEscClose(event) {
   }
 }
 
-
 function onSubmitButton() {
   const email = emailInput.value.trim();
   const comment = commentInput.value.trim();
 
   if (!validateEmail(email)) {
-    handleFailure(emailInput, emailMessage);
+    handleFailure();
   }
 
   if (!validateComment(comment)) {
-    handleFailure(commentInput, commentMessage);
+    handleFailure();
   }
 }
-
 
 async function onSubmit(event) {
   event.preventDefault();
@@ -338,47 +159,18 @@ async function onSubmit(event) {
       throw new Error('Comment must be at least 10 characters long');
     }
 
-    //  Axios
     const response = await userForm({ email, comment });
     formData.reset();
 
-   
     handleOpenModal();
-
 
     document.body.addEventListener('click', closeModal);
     window.addEventListener('keydown', onEscClose);
   } catch (error) {
-  
     showMessage(errorIcon, error.message, '#e74a3b');
   }
 }
 
-
-// function handleInputCheck() {
-//   const email = emailInput.value.trim();
-//   const comment = commentInput.value.trim();
-
-//   if (email === '' || comment === '') {
-//     return;
-//   }
-
-//   if (validateEmail(email)) {
-//     handleSuccess(emailInput, emailMessage);
-//     setTimeout(() => afterFillSuccess(emailMessage), 2000);
-//   } else {
-//     handleFailure(emailInput, emailMessage);
-//     setTimeout(() => afterFillFailure(emailMessage), 2000);
-//   }
-
-//   if (validateComment(comment)) {
-//     handleSuccess(commentInput, commentMessage);
-//     setTimeout(() => afterFillSuccess(commentMessage), 2000);
-//   } else {
-//     handleFailure(commentInput, commentMessage);
-//     setTimeout(() => afterFillFailure(commentMessage), 2000);
-//   }
-// }
 function handleInputCheck() {
   const email = emailInput.value.trim();
   const comment = commentInput.value.trim();
@@ -388,19 +180,19 @@ function handleInputCheck() {
   }
 
   if (validateEmail(email)) {
-    handleSuccess(emailInput, emailMessage);
-    setTimeout(() => afterFillSuccess(emailInput, emailMessage), 2000);
+    handleSuccess();
+    setTimeout(afterFillSuccess, 2000);
   } else {
-    handleFailure(emailInput, emailMessage);
-    setTimeout(() => afterFillFailure(emailInput, emailMessage), 2000);
+    handleFailure();
+    setTimeout(afterFillFailure, 2000);
   }
 
   if (validateComment(comment)) {
-    handleSuccess(commentInput, commentMessage);
-    setTimeout(() => afterFillSuccess(commentInput, commentMessage), 2000);
+    handleSuccess();
+    setTimeout(afterFillSuccess, 2000);
   } else {
-    handleFailure(commentInput, commentMessage);
-    setTimeout(() => afterFillFailure(commentInput, commentMessage), 2000);
+    handleFailure();
+    setTimeout(afterFillFailure, 2000);
   }
 }
 
