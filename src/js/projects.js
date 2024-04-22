@@ -13,19 +13,4 @@ new Swiper('.projects-swiper', {
     prevEl: '.js-btn_arrow-left',
     nextEl: '.js-btn_arrow-right',
   },
-  // breakpoints: {
-  //   320: {
-  //     height: 288,
-  //   },
-  //   375: {
-  //     height: 343,
-  //   },
-  //   768: {
-  //     height: 625,
-  //   },
-  //   1440: {
-  //   },
-  // },
 });
-
-// swiper.allowSlideNext;
