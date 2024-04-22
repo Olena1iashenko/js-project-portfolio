@@ -8,16 +8,37 @@
   text-transform: uppercase;
   color: rgba(250, 250, 250, 0.4);
 }
-.projects-wrapper {
+
+/* .projects-swiper-slide {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: green;
+} */
+
+#section-pojects .swiper-slide {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* background-color: green; */
+}
+@media only screen and (min-width: 1440px) {
+  #section-pojects .swiper-slide {
+    flex-direction: column;
+    /* background-color: red; */
+  }
 }
 
-@media only screen and (min-width: 1440px) {
+/* .projects-wrapper {
+  display: flex;
+  flex-direction: column;
+} */
+
+/* @media only screen and (min-width: 1440px) {
   .projects-wrapper {
     flex-direction: row;
   }
-}
+} */
 /* margin-top: 32px; */
 
 .projects-light-part {
