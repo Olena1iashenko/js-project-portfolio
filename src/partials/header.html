@@ -2,25 +2,40 @@
   <div class="container header-container">
     <div class="container-logo">
       <picture class="header-logo">
-        <source media="(max-width: 375px)" srcset="
+        <source
+          media="(max-width: 375px)"
+          srcset="
             ./img/header/mobile-logo@1x.jpg 1x,
             ./img/header/mobile-logo@2x.jpg 2x
-          " />
-        <source media="(min-width: 768px)" srcset="
+          "
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="
             ./img/header/tablet-logo@1x.jpg 1x,
             ./img/header/tablet-logo@2x.jpg 2x
-          " />
-        <source media="(min-width: 1440px)" srcset="
+          "
+        />
+        <source
+          media="(min-width: 1440px)"
+          srcset="
             ./img/header/desktop-logo@1x.jpg 1x,
             ./img/header/desktop-logo@2x.jpg 2x
-          " />
-        <img class="logo-img" src="./img/header/mobile-logo@1x.jpg" width="80" height="80" alt="logo photo" />
+          "
+        />
+        <img
+          class="logo-img"
+          src="./img/header/mobile-logo@1x.jpg"
+          width="80"
+          height="80"
+          alt="logo photo"
+        />
       </picture>
       <p class="header-logo-text">jefferson*</p>
     </div>
     <div class="header-menu">
       <h2 class="header-menu-nav">Menu</h2>
-      <ul class="menu-item-box hidden">
+      <ul class="menu-item-box is-hidden">
         <li class="menu-item">
           <a href="#section-about-me" class="main-header-link">About me</a>
         </li>
@@ -37,7 +52,11 @@
     </div>
     <a href="#section-footer" class="link-order">Order the project</a>
   </div>
-  <button class="header-burger-btn open-modal" aria-label="button-open-menu" type="button">
+  <button
+    class="header-burger-btn open-modal"
+    aria-label="button-open-menu"
+    type="button"
+  >
     <svg class="burger-svg" width="24" height="12">
       <use href="./img/icons.svg#icon-BurgerMenuOpen"></use>
     </svg>
@@ -46,7 +65,7 @@
 
 <!-- #Modal -->
 
-<div class="mobile-modal-menu hidden">
+<div class="mobile-modal-menu is-hidden">
   <button class="mobile-menu-btn close-modal" type="button">
     <svg class="mobile-svg" width="14" height="1">
       <use href="./img/icons.svg#icon-BurgerMenuClosed"></use>
