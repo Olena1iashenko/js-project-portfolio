@@ -72,6 +72,7 @@
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #fafafa;
+    cursor: pointer;
   }
 }
 
