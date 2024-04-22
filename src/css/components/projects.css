@@ -19,15 +19,33 @@
 #section-pojects .swiper-slide {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   /* background-color: green; */
 }
 @media only screen and (min-width: 1440px) {
   #section-pojects .swiper-slide {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
     /* background-color: red; */
   }
 }
+
+@media only screen and (min-width: 1440px) {
+  .projects-swiper-slide {
+    display: flex; /* Встановлюємо flex контейнер */
+    flex-direction: row; /* Встановлюємо напрямок розташування елементів по горизонталі */
+  }
+
+  .projects-light-part,
+  .projects-slide-img-wrapper {
+    flex: 1; /* Встановлюємо рівномірний розподіл простору між елементами */
+  }
+}
+
+/* .projects-light-part,
+.projects-slide-img-wrapper {
+  flex: 1;
+} */
 
 /* .projects-wrapper {
   display: flex;
@@ -227,7 +245,7 @@
 
 /* .js-btn_arrow-passive {
 } */
-
+/* 
 .projects-swiper {
   width: 343px;
   margin: 0 auto;
@@ -243,4 +261,4 @@
   #section-pojects .swiper-slide {
     width: 704px;
   }
-}
+} */
