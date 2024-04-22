@@ -206,6 +206,25 @@
   }
 }
 
+.about-me-swiper-wrapper ul {
+  display: flex;
+  flex-direction: row;
+  max-width: 260px;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-me-swiper-wrapper ul {
+    max-width: 600px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .about-me-swiper-wrapper ul {
+    max-width: 1200px;
+  }
+}
+
 #section-about-me .about-me-swiper-slide {
   display: flex;
   /* padding: 88px 0; */
