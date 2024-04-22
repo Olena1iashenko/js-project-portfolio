@@ -34,6 +34,7 @@
   .projects-swiper-slide {
     display: flex; /* Встановлюємо flex контейнер */
     flex-direction: row; /* Встановлюємо напрямок розташування елементів по горизонталі */
+    width: calc((100% - 40px) / 2);
   }
 
   .projects-light-part,
