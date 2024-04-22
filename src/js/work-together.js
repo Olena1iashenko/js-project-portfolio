@@ -1,6 +1,6 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
-import errorIcon from '../img/icons.svg#icon-x';
+import errorIcon from '../img/icons.svg';
 
 const formData = document.querySelector('.footer-form');
 const emailInput = document.querySelector('#user-email');
@@ -35,7 +35,7 @@ commentInput.addEventListener('input', function(event) {
 
 function showMessage(icon, message, bgColor) {
   iziToast.show({
-    iconUrl: icon,
+    iconUrl: `${icon}#icon-x`,
     titleColor: 'White',
     titleSize: '24px',
     message: message,
