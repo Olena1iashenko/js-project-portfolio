@@ -480,13 +480,6 @@
   justify-content: center;
   background-color: #1c1d20;
   cursor: pointer;
-}
-
-.modal-btn:hover {
-  border: none;
-}
-
-.modal-btn:focus {
   border: none;
 }
 

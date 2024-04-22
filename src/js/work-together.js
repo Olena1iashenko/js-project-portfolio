@@ -1,6 +1,5 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
-import errorIcon from '../img/icons.svg';
 
 const formData = document.querySelector('.footer-form');
 const emailInput = document.querySelector('#user-email');
@@ -72,9 +71,8 @@ function handleCommentsInput(event) {
   }
 }
 
-function showMessage(icon, message, bgColor) {
+function showMessage(message, bgColor) {
   iziToast.show({
-    iconUrl: `${icon}#icon-x`,
     titleColor: 'White',
     titleSize: '24px',
     message: message,
@@ -253,6 +251,8 @@ function handleInputCheck() {
 formData.addEventListener('submit', onSubmit);
 clickSubmitBtn.addEventListener('click', onSubmitButton);
 emailInput.addEventListener('input', handleInputCheck);
-commentInput.addEventListener('input', handleInputCheck);
+// commentInput.addEventListener('input', handleInputCheck);
 emailInput.addEventListener('input', handleEmailInput);
 commentInput.addEventListener('input', handleCommentsInput);
+
+commentInput.addEventListener('blur', handleInputCheck);
