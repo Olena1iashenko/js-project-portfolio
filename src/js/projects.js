@@ -8,6 +8,7 @@ new Swiper('.projects-swiper', {
   // Install modules
   modules: [Navigation],
   slidesPerView: 1,
+  spaceBetween: 32,
   // speed: 500,
   slideClass: 'projects-swiper-slide',
   navigation: {

@@ -239,7 +239,7 @@
 .projects-swiper {
   width: 343px;
   margin: 0 auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 @media only screen and (min-width: 768px) {
