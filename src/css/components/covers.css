@@ -75,17 +75,16 @@
   display: inline-block;
   margin-right: 20px;
   animation-name: slideOut;
-  /* animation: slideOut 40s linear infinite; */
 }
 @keyframes slideOut {
   0% {
-    transform: translateX(-700%);
+    transform: translateX(-690%);
   }
   50% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-700%);
+    transform: translateX(-690%);
   }
 }
 .covers-list-third {
