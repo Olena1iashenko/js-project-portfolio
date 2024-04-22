@@ -15,7 +15,7 @@ const accordion = new Accordion(container, {
 
 // Swiper
 
-const swiper = new Swiper('.about-me-swiper', {
+const swiper = new Swiper('.about-me-swiper-wrapper', {
   loop: true,
   // enabled: true,
   // onlyInViewport: true,

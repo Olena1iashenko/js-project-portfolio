@@ -206,7 +206,7 @@
   }
 }
 
-.about-me-swiper-wrapper ul {
+.about-me-swiper-wrapper {
   display: flex;
   flex-direction: row;
   max-width: 260px;
@@ -214,13 +214,13 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .about-me-swiper-wrapper ul {
+  .about-me-swiper-wrapper {
     max-width: 600px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .about-me-swiper-wrapper ul {
+  .about-me-swiper-wrapper {
     max-width: 1200px;
   }
 }
