@@ -15,7 +15,7 @@ const accordion = new Accordion(container, {
 
 // Swiper
 
-const swiper = new Swiper('.about-me-swiper', {
+const swiper = new Swiper('.about-me-swiper-wrapper', {
   loop: true,
   // enabled: true,
   // onlyInViewport: true,
@@ -24,6 +24,7 @@ const swiper = new Swiper('.about-me-swiper', {
   navigation: {
     nextEl: '.about-me-swiper-button-next',
   },
+  slidesOffsetAfter: 72,
   // Responsive breakpoints
   breakpoints: {
     // when window width is >= 320px
@@ -38,7 +39,7 @@ const swiper = new Swiper('.about-me-swiper', {
       spaceBetween: 0,
       slidesOffsetAfter: 364,
     },
-    // when window width is >= 640px
+    // when window width is >= 1440px
     1440: {
       slidesPerView: 6,
       spaceBetween: 0,
