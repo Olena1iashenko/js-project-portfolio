@@ -7,8 +7,9 @@ import 'swiper/css/navigation';
 new Swiper('.projects-swiper', {
   // Install modules
   modules: [Navigation],
-  speed: 500,
   slidesPerView: 1,
+  speed: 500,
+  slideClass: 'projects-swiper-slide',
   navigation: {
     prevEl: '.js-btn_arrow-left',
     nextEl: '.js-btn_arrow-right',
