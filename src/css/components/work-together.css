@@ -5,7 +5,7 @@
   position: relative;
   overflow: hidden;
   padding: 32px 0;
-  background-image: url('../../img/footer/footer-background-phone@1x.png');
+  background-image: url('./img/footer/footer-background-phone@1x.png');
   background-color: #1c1d20;
   background-repeat: no-repeat;
   background-position: center;
@@ -23,7 +23,7 @@
 
 @media (min-resolution: 192dpi) {
   .footer {
-    background-image: url('../../img/footer/footer-background-phone@2x.png');
+    background-image: url('./img/footer/footer-background-phone@2x.png');
     background-image: url('');
     background-color: #1c1d20;
   }
@@ -31,7 +31,7 @@
 
 @media only screen and (min-width: 768px) {
   .footer {
-    background-image: url('../../img/footer/footer-background-tab@1x.png/');
+    background-image: url('./img/footer/footer-background-tab@1x.png/');
     background-color: #1c1d20;
     background-repeat: no-repeat;
     background-position: center;
@@ -41,14 +41,14 @@
 
 @media only screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .footer {
-    background-image: url('../../img/footer/footer-background-tab@2x.png');
+    background-image: url('./img/footer/footer-background-tab@2x.png');
     background-color: #1c1d20;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .footer {
-    background-image: url('../../img/footer/footer-background-desk@1x.png');
+    background-image: url('./img/footer/footer-background-desk@1x.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -64,7 +64,7 @@
 
 @media only screen and (min-width: 1440px) and (min-resolution: 192dpi) {
   .footer {
-    background-image: url('../../img/footer/footer-background-desk@2x.png');
+    background-image: url('./img/footer/footer-background-desk@2x.png');
     background-color: #1c1d20;
   }
 }
@@ -166,7 +166,7 @@
 .footer-form {
   display: flex;
   flex-direction: column;
-  width: 343px;
+  max-width: 343px;
 }
 
 @media only screen and (min-width: 768px) {
