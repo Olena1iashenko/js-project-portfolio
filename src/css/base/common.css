@@ -22,7 +22,7 @@ html {
 
 body {
   font-family: 'Inter Tight', sans-serif;
- }
+}
 
 img {
   display: block;
@@ -51,6 +51,10 @@ ol {
 
 a {
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 section {
