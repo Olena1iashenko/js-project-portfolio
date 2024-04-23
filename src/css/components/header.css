@@ -182,11 +182,16 @@
 /* Mobile Modal */
 
 .mobile-modal-menu {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-size: cover;
+  padding-bottom: 64px;
+  /* position: absolute; */
   position: fixed;
   z-index: 1000;
   width: 100%;
-  height: 812px;
+  /* height: 812px; */
   background-image: url('../../img/menu/mobile-menu@1x.webp');
   background-position: center;
   transition: opacity 250ms linear, visibility 250ms linear;
@@ -215,12 +220,14 @@
 }
 
 .mobile-menu-list {
+  margin-top: auto;
+  margin-bottom: auto;
   display: flex;
   gap: 12px;
   flex-direction: column;
   align-items: center;
-  margin-top: 302px;
-  margin-bottom: 289px;
+  /* margin-top: 302px; */
+  /* margin-bottom: 289px; */
 }
 
 .header-link {
