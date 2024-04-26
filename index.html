@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>js-project-portfolio</title>
-    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQzSURBVHgB7ZpPaBNZHMe/ExcR3ExzTyrjLixNT3syORZ206uu2YuysOmpu4j2FP9WKNT/HrSKWC+mBdGLrX+oBxuR6qkRhHpJiqCOdkY8ptMcNfH3ezMTkzQmGa2ZDORTwrx5vD+/f+/3XvMioQ6KogSKRfxbLGGgBPwuURVcoFTCkiRB9Um4++6dOl2vjVRb0dur7KLaFHUOoINgRUjYsVpFNlW+hLYpF+lxgT5b0HkEKBp2yXJAMoz8gl1ZVoCEH0MJh9DpSBjo6QkESImH/CoUoLBJwLS8V4hu3Rp4USjkl8Ua6N2mvKGYV+At8oU1bN/E1qfYSsB7bNm8GR98VNgJr0LrwVekPA+PwnuUz61NaiNg2X3wOF0F3KargNs0VWBkZD9ev3qJeHw3nBAKBXHr5g0sLT0X/XkcZmgoUa6bm7u3rp8s+6lvCK3SVIFQMGgO7P8ZTjh/7iwikR3QVlaQTj/C4mJGGOH46FFx0J+ZmcX8fHpdv/5wP54+eSwM0Ao/NWuQPHgYqalpZLM5OIGFZ4b/2wdd10X5b8uLExOXxZiVsIc0TUcuZ87DZfYWb1ep1DS+WQG2hN8viycPahONRBC0vMOTZq2JuV0wGKroHyqHhG1VWZZJwQgppokx+Z3HGjmwX3iL4fALh/twPTXVUD4p1KuUGjXgQdk6yeRhzMzOihi9Nnm1bGGbdDqN8ROnRPtW1wt7YuLSZXwxyg7cJMEZwzCwZ+8/ZJzlhmM09UAtx0ePCeHZMlMUBmy9WOwPEvyA8BQrwfFtC7KXhLBJUEgMxv4UfR+RpVcsj/IYvDZY8Xmq5zaLmWd4MHdfjMVhvCEK9PeHrUnSOEGCmuhifXBIRaMRcMzy5DaVZdszuexyVT1be9WyuER/rEAyeQhpevrJ441wpADHLcOTxHdXh4lhrJlKUhZp5vZ62AaJWnP09MgUsnea9nOkgOw3rREjy/DnR7CYyeCXX39rub0jBYw108rj4yfXpUG3cHSUyGWz4lnP+oOxWDnE2okjBXjhZcjFvFjPnztD8R4WOZ7T7OTkFao7Xd4b2oXjNMo76yilPN5VK/O9pmlVu267cKwAp7yDlJd5Dwj39Yk6TTdT6Zq1RhhOg7XcppzOZ6LKFPq9tHSUgBB8taqeBW50PqqXAjMcgthYGirAJ8rYoLlgs9+Q29tBw0Ucj/8ljsPDw/+3PbZbpelhrtPp/k/sNl0F3KargNv4KIeq8Ch8DesjFyzBo5h3yBIW4FFKRdyV+Fb+UxFvOu1iuxkc+vqKut2nqmqe3obgNYoY44e4J6ZL42W+PKZiFF6ghDFdVye4WL6p55tvWeiAAXQwFDoXdU09Yr9X/VbCWM0/8fsDb+lrH/6FSqetifynj9jz3rK8jfS11sGgkqAcu1Pc4EvuXMXyQuU0TzIsFAqYzudpvdbwGTUNpCilLMXgAAAAAElFTkSuQmCC" type="image/svg+xml" />
-    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQzSURBVHgB7ZpPaBNZHMe/ExcR3ExzTyrjLixNT3syORZ206uu2YuysOmpu4j2FP9WKNT/HrSKWC+mBdGLrX+oBxuR6qkRhHpJiqCOdkY8ptMcNfH3ezMTkzQmGa2ZDORTwrx5vD+/f+/3XvMioQ6KogSKRfxbLGGgBPwuURVcoFTCkiRB9Um4++6dOl2vjVRb0dur7KLaFHUOoINgRUjYsVpFNlW+hLYpF+lxgT5b0HkEKBp2yXJAMoz8gl1ZVoCEH0MJh9DpSBjo6QkESImH/CoUoLBJwLS8V4hu3Rp4USjkl8Ua6N2mvKGYV+At8oU1bN/E1qfYSsB7bNm8GR98VNgJr0LrwVekPA+PwnuUz61NaiNg2X3wOF0F3KargNs0VWBkZD9ev3qJeHw3nBAKBXHr5g0sLT0X/XkcZmgoUa6bm7u3rp8s+6lvCK3SVIFQMGgO7P8ZTjh/7iwikR3QVlaQTj/C4mJGGOH46FFx0J+ZmcX8fHpdv/5wP54+eSwM0Ao/NWuQPHgYqalpZLM5OIGFZ4b/2wdd10X5b8uLExOXxZiVsIc0TUcuZ87DZfYWb1ep1DS+WQG2hN8viycPahONRBC0vMOTZq2JuV0wGKroHyqHhG1VWZZJwQgppokx+Z3HGjmwX3iL4fALh/twPTXVUD4p1KuUGjXgQdk6yeRhzMzOihi9Nnm1bGGbdDqN8ROnRPtW1wt7YuLSZXwxyg7cJMEZwzCwZ+8/ZJzlhmM09UAtx0ePCeHZMlMUBmy9WOwPEvyA8BQrwfFtC7KXhLBJUEgMxv4UfR+RpVcsj/IYvDZY8Xmq5zaLmWd4MHdfjMVhvCEK9PeHrUnSOEGCmuhifXBIRaMRcMzy5DaVZdszuexyVT1be9WyuER/rEAyeQhpevrJ441wpADHLcOTxHdXh4lhrJlKUhZp5vZ62AaJWnP09MgUsnea9nOkgOw3rREjy/DnR7CYyeCXX39rub0jBYw108rj4yfXpUG3cHSUyGWz4lnP+oOxWDnE2okjBXjhZcjFvFjPnztD8R4WOZ7T7OTkFao7Xd4b2oXjNMo76yilPN5VK/O9pmlVu267cKwAp7yDlJd5Dwj39Yk6TTdT6Zq1RhhOg7XcppzOZ6LKFPq9tHSUgBB8taqeBW50PqqXAjMcgthYGirAJ8rYoLlgs9+Q29tBw0Ucj/8ljsPDw/+3PbZbpelhrtPp/k/sNl0F3KargNv4KIeq8Ch8DesjFyzBo5h3yBIW4FFKRdyV+Fb+UxFvOu1iuxkc+vqKut2nqmqe3obgNYoY44e4J6ZL42W+PKZiFF6ghDFdVye4WL6p55tvWeiAAXQwFDoXdU09Yr9X/VbCWM0/8fsDb+lrH/6FSqetifynj9jz3rK8jfS11sGgkqAcu1Pc4EvuXMXyQuU0TzIsFAqYzudpvdbwGTUNpCilLMXgAAAAAElFTkSuQmCC" type="image/svg+xml" />
-    
-    <script type="module" crossorigin src="/js-project-portfolio/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/js-project-portfolio/assets/vendor-bb0e9cc2.js">
-    <link rel="stylesheet" href="/js-project-portfolio/assets/vendor-c4244327.css">
-    <link rel="stylesheet" href="/js-project-portfolio/assets/index-7ba2f077.css">
-  </head>
 
-  <body>
-    <header class="header" id="section-header">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free Web tutorials">
+  <title>js-project-portfolio</title>
+  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQzSURBVHgB7ZpPaBNZHMe/ExcR3ExzTyrjLixNT3syORZ206uu2YuysOmpu4j2FP9WKNT/HrSKWC+mBdGLrX+oBxuR6qkRhHpJiqCOdkY8ptMcNfH3ezMTkzQmGa2ZDORTwrx5vD+/f+/3XvMioQ6KogSKRfxbLGGgBPwuURVcoFTCkiRB9Um4++6dOl2vjVRb0dur7KLaFHUOoINgRUjYsVpFNlW+hLYpF+lxgT5b0HkEKBp2yXJAMoz8gl1ZVoCEH0MJh9DpSBjo6QkESImH/CoUoLBJwLS8V4hu3Rp4USjkl8Ua6N2mvKGYV+At8oU1bN/E1qfYSsB7bNm8GR98VNgJr0LrwVekPA+PwnuUz61NaiNg2X3wOF0F3KargNs0VWBkZD9ev3qJeHw3nBAKBXHr5g0sLT0X/XkcZmgoUa6bm7u3rp8s+6lvCK3SVIFQMGgO7P8ZTjh/7iwikR3QVlaQTj/C4mJGGOH46FFx0J+ZmcX8fHpdv/5wP54+eSwM0Ao/NWuQPHgYqalpZLM5OIGFZ4b/2wdd10X5b8uLExOXxZiVsIc0TUcuZ87DZfYWb1ep1DS+WQG2hN8viycPahONRBC0vMOTZq2JuV0wGKroHyqHhG1VWZZJwQgppokx+Z3HGjmwX3iL4fALh/twPTXVUD4p1KuUGjXgQdk6yeRhzMzOihi9Nnm1bGGbdDqN8ROnRPtW1wt7YuLSZXwxyg7cJMEZwzCwZ+8/ZJzlhmM09UAtx0ePCeHZMlMUBmy9WOwPEvyA8BQrwfFtC7KXhLBJUEgMxv4UfR+RpVcsj/IYvDZY8Xmq5zaLmWd4MHdfjMVhvCEK9PeHrUnSOEGCmuhifXBIRaMRcMzy5DaVZdszuexyVT1be9WyuER/rEAyeQhpevrJ441wpADHLcOTxHdXh4lhrJlKUhZp5vZ62AaJWnP09MgUsnea9nOkgOw3rREjy/DnR7CYyeCXX39rub0jBYw108rj4yfXpUG3cHSUyGWz4lnP+oOxWDnE2okjBXjhZcjFvFjPnztD8R4WOZ7T7OTkFao7Xd4b2oXjNMo76yilPN5VK/O9pmlVu267cKwAp7yDlJd5Dwj39Yk6TTdT6Zq1RhhOg7XcppzOZ6LKFPq9tHSUgBB8taqeBW50PqqXAjMcgthYGirAJ8rYoLlgs9+Q29tBw0Ucj/8ljsPDw/+3PbZbpelhrtPp/k/sNl0F3KargNv4KIeq8Ch8DesjFyzBo5h3yBIW4FFKRdyV+Fb+UxFvOu1iuxkc+vqKut2nqmqe3obgNYoY44e4J6ZL42W+PKZiFF6ghDFdVye4WL6p55tvWeiAAXQwFDoXdU09Yr9X/VbCWM0/8fsDb+lrH/6FSqetifynj9jz3rK8jfS11sGgkqAcu1Pc4EvuXMXyQuU0TzIsFAqYzudpvdbwGTUNpCilLMXgAAAAAElFTkSuQmCC" type="image/svg+xml" />
+  <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQzSURBVHgB7ZpPaBNZHMe/ExcR3ExzTyrjLixNT3syORZ206uu2YuysOmpu4j2FP9WKNT/HrSKWC+mBdGLrX+oBxuR6qkRhHpJiqCOdkY8ptMcNfH3ezMTkzQmGa2ZDORTwrx5vD+/f+/3XvMioQ6KogSKRfxbLGGgBPwuURVcoFTCkiRB9Um4++6dOl2vjVRb0dur7KLaFHUOoINgRUjYsVpFNlW+hLYpF+lxgT5b0HkEKBp2yXJAMoz8gl1ZVoCEH0MJh9DpSBjo6QkESImH/CoUoLBJwLS8V4hu3Rp4USjkl8Ua6N2mvKGYV+At8oU1bN/E1qfYSsB7bNm8GR98VNgJr0LrwVekPA+PwnuUz61NaiNg2X3wOF0F3KargNs0VWBkZD9ev3qJeHw3nBAKBXHr5g0sLT0X/XkcZmgoUa6bm7u3rp8s+6lvCK3SVIFQMGgO7P8ZTjh/7iwikR3QVlaQTj/C4mJGGOH46FFx0J+ZmcX8fHpdv/5wP54+eSwM0Ao/NWuQPHgYqalpZLM5OIGFZ4b/2wdd10X5b8uLExOXxZiVsIc0TUcuZ87DZfYWb1ep1DS+WQG2hN8viycPahONRBC0vMOTZq2JuV0wGKroHyqHhG1VWZZJwQgppokx+Z3HGjmwX3iL4fALh/twPTXVUD4p1KuUGjXgQdk6yeRhzMzOihi9Nnm1bGGbdDqN8ROnRPtW1wt7YuLSZXwxyg7cJMEZwzCwZ+8/ZJzlhmM09UAtx0ePCeHZMlMUBmy9WOwPEvyA8BQrwfFtC7KXhLBJUEgMxv4UfR+RpVcsj/IYvDZY8Xmq5zaLmWd4MHdfjMVhvCEK9PeHrUnSOEGCmuhifXBIRaMRcMzy5DaVZdszuexyVT1be9WyuER/rEAyeQhpevrJ441wpADHLcOTxHdXh4lhrJlKUhZp5vZ62AaJWnP09MgUsnea9nOkgOw3rREjy/DnR7CYyeCXX39rub0jBYw108rj4yfXpUG3cHSUyGWz4lnP+oOxWDnE2okjBXjhZcjFvFjPnztD8R4WOZ7T7OTkFao7Xd4b2oXjNMo76yilPN5VK/O9pmlVu267cKwAp7yDlJd5Dwj39Yk6TTdT6Zq1RhhOg7XcppzOZ6LKFPq9tHSUgBB8taqeBW50PqqXAjMcgthYGirAJ8rYoLlgs9+Q29tBw0Ucj/8ljsPDw/+3PbZbpelhrtPp/k/sNl0F3KargNv4KIeq8Ch8DesjFyzBo5h3yBIW4FFKRdyV+Fb+UxFvOu1iuxkc+vqKut2nqmqe3obgNYoY44e4J6ZL42W+PKZiFF6ghDFdVye4WL6p55tvWeiAAXQwFDoXdU09Yr9X/VbCWM0/8fsDb+lrH/6FSqetifynj9jz3rK8jfS11sGgkqAcu1Pc4EvuXMXyQuU0TzIsFAqYzudpvdbwGTUNpCilLMXgAAAAAElFTkSuQmCC" type="image/svg+xml" />
+  
+  <script type="module" crossorigin src="/js-project-portfolio/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/js-project-portfolio/assets/vendor-bb0e9cc2.js">
+  <link rel="stylesheet" href="/js-project-portfolio/assets/vendor-c4244327.css">
+  <link rel="stylesheet" href="/js-project-portfolio/assets/index-7ba2f077.css">
+</head>
+
+<body>
+  <header class="header" id="section-header">
   <div class="container header-container">
     <div class="container-logo">
       <picture class="header-logo">
@@ -97,8 +99,8 @@
   </div>
 </div>
 
-    <main>
-      <section class="section-hero" id="section-hero">
+  <main>
+    <section class="section-hero" id="section-hero">
   <div class="container">
     <div class="wrap-hero">
       <h1 class="title_hero">Hello. <br> I’m Fullstack developer Lloyd Jefferson.</h1>
@@ -125,7 +127,7 @@
   </div>
 </section>
 
-      <section class="section" id="section-about-me">
+    <section class="section" id="section-about-me">
     <div class="container">
         <h2 class="visually-hidden">About me</h2>
         <div class="about-me-box">
@@ -234,7 +236,7 @@
         </div>
     </div>
 </section>
-      
+    
 <section class="section" id="section-benefits">
     <div class="container">
         <div class="wrap">
@@ -280,7 +282,7 @@
     </div>
 </section>
 
-      <section class="section" id="section-pojects">
+    <section class="section" id="section-pojects">
     <div class="container">
         <h2 class="projects-title">Projects</h2>
         <div class="swiper project-slider projects-wrapper projects-swiper projects-dark-part">
@@ -390,7 +392,7 @@
         </div>
     </div>
 </section>
-      <section class="section fqa" id="section-faq">
+    <section class="section fqa" id="section-faq">
   <div class="container fqa-container">
     <h2 class="faq-main-title">FAQ</h2>
     <div class="faq-wrapper">
@@ -512,7 +514,7 @@
 
 
 
-      <section class="covers-section js-covers-section" id="section-covers">
+    <section class="covers-section js-covers-section" id="section-covers">
   <div class="container-covers">
     <h2 class="visually-hidden">Covers</h2>
     <ul class="covers-list-first js-covers-list-first">
@@ -794,7 +796,7 @@
   </div>
 </section>
 
-      <section class="section" id="section-reviews">
+    <section class="section" id="section-reviews">
   <div class="container">
     <h2 class="reviews-title">REVIEWS</h2>
     <div class="reviews-swiper swiper">
@@ -816,8 +818,8 @@
     </div>
   </div>
 </section>
-    </main>
-    <footer class="footer" id="section-footer">
+  </main>
+  <footer class="footer" id="section-footer">
   <div class="container footer-container">
     <h2 class="footer-title">
       <span class="footer-title-top"
@@ -915,6 +917,7 @@
 <!-- #endModal -->
 
 
-    
-  </body>
+  
+</body>
+
 </html>
